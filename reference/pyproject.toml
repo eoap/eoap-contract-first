@@ -1,0 +1,69 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "waterbodies"
+dynamic = ["version"]
+description = "CWL contract-first Water Bodies processing application"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12,<3.15"
+
+keywords = ["EOAP", "CWL", "STAC", "NDWI"]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+dependencies = [
+  "click>=8.1,<9",
+  "numpy>=2,<3",
+  "rasterio>=1.4,<2",
+  "scikit-image>=0.25,<0.27",
+  "pyproj>=3.6,<4",
+  "shapely>=2,<3",
+  "pystac[validation] @ git+https://github.com/Terradue/pystac.git@t2_extensions",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project.urls]
+Repository = "https://github.com/eoap/waterbodies-learning"
+
+# ---------------------------------------------------------------------------
+# Versioning and packaging
+# ---------------------------------------------------------------------------
+
+[tool.hatch.version]
+path = "src/waterbodies/__about__.py"
+
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src",
+  "/tests",
+  "/README.md",
+  "/pyproject.toml",
+  "/waterbodies.cwl",
+  "/inputs.yaml",
+  "/containers",
+  "/Dockerfile"
+]
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/waterbodies"]
+
+
+[project.scripts]
+waterbodies = "waterbodies.cli:waterbodies"

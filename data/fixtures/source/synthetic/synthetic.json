@@ -1,0 +1,84 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+  ],
+  "id": "synthetic",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    0,
+    0,
+    8,
+    8
+  ],
+  "properties": {
+    "datetime": "2024-01-01T00:00:00Z"
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "assets": {
+    "green": {
+      "href": "../green.tif",
+      "type": "image/tiff; application=geotiff",
+      "eo:bands": [
+        {
+          "name": "green",
+          "common_name": "green"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "nir": {
+      "href": "../nir.tif",
+      "type": "image/tiff; application=geotiff",
+      "eo:bands": [
+        {
+          "name": "nir",
+          "common_name": "nir"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  }
+}
