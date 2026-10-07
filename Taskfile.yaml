@@ -1,0 +1,140 @@
+version: '3'
+vars:
+  VERSION: '{{.VERSION | default "1.0.0"}}'
+  CONTRACT: '{{.CONTRACT | default "reference/waterbodies.cwl"}}'
+  PLATFORM: '{{.PLATFORM | default "linux/amd64"}}'
+  SBOM: '{{.SBOM | default "build/sbom"}}'
+tasks:
+  setup:
+    desc: Install the reference and pinned tooling (requires uv and Git)
+    cmds:
+      - uv sync --locked --extra tooling --extra dev
+  quality:
+    cmds:
+      - uv run ruff format --check reference/src scripts tests
+      - uv run ruff check reference/src scripts tests
+      - uv run mypy
+      - uv run bandit -r reference/src scripts -x reference/src/waterbodies/waterbodies.py
+  test:
+    cmds:
+      - uv run pytest
+  contract:validate:
+    cmds:
+      - uv run cwltool --validate '{{.CONTRACT}}#waterbodies'
+      - uv run cwltool --validate modules/11-assure-the-contract/v1/waterbodies.cwl#waterbodies
+      - uv run cwltool --validate modules/11-assure-the-contract/v2/waterbodies.cwl#waterbodies
+  cli:generate:
+    cmds:
+      - uv run transpiler-mate cwl2click --bundle --output reference/src/waterbodies reference/waterbodies.cwl
+  cli:test:
+    cmds:
+      - uv run pytest tests/cli tests/contract
+  fixtures:generate:
+    cmds:
+      - uv run python scripts/fixtures.py
+  workflow:run:
+    cmds:
+      - uv run cwltool --no-container --outdir build/result 'reference/waterbodies.cwl#waterbodies' reference/inputs.yaml
+  workflow:run-container:
+    desc: Execute using the four real Docker images
+    cmds:
+      - uv run cwltool --outdir build/container-result reference/waterbodies.cwl#waterbodies reference/inputs.yaml
+  workflow:test:
+    cmds:
+      - uv run pytest tests/workflow
+  containers:build:
+    cmds:
+      - for component in crop norm-diff otsu stac; do docker build --build-arg VERSION={{.VERSION}} -t ghcr.io/eoap/waterbodies-$component:{{.VERSION}} -f reference/containers/$component/Dockerfile .; done
+  artifacts:derive:
+    cmds:
+      - uv run bash scripts/derive.sh
+  baseline:check:
+    desc: Review the known removal of the default EPSG as a major change
+    cmds:
+      - uv run transpiler-mate baseline --previous modules/11-assure-the-contract/v1/waterbodies.cwl --output reference/expected/baseline/report.json --review-bump major --check modules/11-assure-the-contract/v2/waterbodies.cwl
+  sbom:generate:
+    desc: Inspect registry images with real Trivy; output directory must be new
+    cmds:
+      - uv run transpiler-mate cwl2sbom --platform '{{.PLATFORM}}' --output '{{.SBOM}}' '{{.CONTRACT}}#waterbodies'
+  sbom:check:
+    cmds:
+      - uv run python scripts/supply_chain.py check --contract '{{.CONTRACT}}' --bundle '{{.SBOM}}'
+  oci:annotations:
+    cmds:
+      - uv run transpiler-mate cwl2oci --output build/annotations.json '{{.CONTRACT}}#waterbodies'
+  oci:package:
+    cmds:
+      - task: oci:annotations
+        vars: {CONTRACT: '{{.CONTRACT}}'}
+      - uv run bash supply-chain/oras/package.sh '{{.VERSION}}' '{{.CONTRACT}}' build/annotations.json
+  oci:inspect:
+    cmds:
+      - oras manifest fetch --oci-layout 'build/oci:{{.VERSION}}'
+  supply-chain:integration:
+    desc: Inspect real built images through a disposable localhost registry
+    cmds:
+      - uv run bash scripts/local_supply_chain.sh
+  supply-chain:check:
+    cmds:
+      - uv run python scripts/supply_chain.py inventory --contract '{{.CONTRACT}}'
+      - uv run pytest tests/supply_chain
+  release:prepare:
+    cmds:
+      - uv run python scripts/supply_chain.py prepare --version '{{.VERSION}}'
+      - uv run cwltool --validate build/release/waterbodies.cwl#waterbodies
+  release:publish:
+    desc: Publish gated evidence and local OCI layout to GHCR (authenticated protected operation)
+    preconditions:
+      - sh: test "$WATERBODIES_PUBLISH" = approved
+        msg: Set WATERBODIES_PUBLISH=approved after reviewing the release gates.
+    cmds:
+      - task: sbom:check
+        vars: {CONTRACT: build/release/waterbodies.cwl}
+      - bash supply-chain/policy/scan.sh
+      - bash supply-chain/oras/publish.sh '{{.VERSION}}'
+  docs:serve:
+    cmds:
+      - uv run mkdocs serve
+  docs:build:
+    cmds:
+      - uv run mkdocs build --strict
+  reference:test:
+    cmds:
+      - task: contract:validate
+      - task: quality
+      - task: test
+      - task: supply-chain:check
+      - task: docs:build
+  slides:setup:
+    desc: Install the locked local Marp CLI (requires Node.js and npm)
+    cmds:
+      - npm --prefix slides ci
+  slides:preview:
+    desc: Serve the instructor deck with live reload at http://localhost:8080
+    cmds:
+      - npm --prefix slides run preview
+  slides:html:
+    desc: Export the themed instructor deck to build/slides/teacher-deck.html
+    cmds:
+      - mkdir -p build/slides
+      - npm --prefix slides run html
+  slides:pdf:
+    desc: Export the instructor PDF with notes (requires Chrome, Edge or Firefox)
+    cmds:
+      - mkdir -p build/slides
+      - npm --prefix slides run pdf
+  slides:notes:
+    desc: Export presenter comments as a teacher-only text file
+    cmds:
+      - mkdir -p build/slides
+      - npm --prefix slides run notes
+  slides:check:
+    desc: Detect drift between teaching examples and repository commands/contracts
+    cmds:
+      - uv run pytest tests/learning/test_slides.py
+  slides:deployment-demo:
+    desc: Run the prepared instructor ZOO demo (default MODE=inspect)
+    vars:
+      MODE: '{{.MODE | default "inspect"}}'
+    cmds:
+      - bash slides/deployment-demo.sh '{{.MODE}}'

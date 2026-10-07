@@ -1,0 +1,8 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.10
+    hooks:
+      - id: ruff-check
+        exclude: ^reference/src/waterbodies/waterbodies\.py$
+      - id: ruff-format
+        exclude: ^reference/src/waterbodies/waterbodies\.py$
