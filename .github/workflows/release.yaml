@@ -1,0 +1,99 @@
+name: release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Reviewed SemVer application release (x.y.z)
+        required: true
+      previous:
+        description: Previous promoted CWL source accessible to the runtime
+        required: true
+      review_bump:
+        description: Explicit classification after reviewing baseline findings
+        required: true
+        type: choice
+        options: [patch, minor, major]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --extra tooling --extra dev
+      - run: uv run ruff format --check reference/src scripts tests
+      - run: uv run ruff check reference/src scripts tests
+      - run: uv run mypy
+      - run: uv run bandit -r reference/src scripts -x reference/src/waterbodies/waterbodies.py
+      - run: uv run pytest
+      - run: uv run mkdocs build --strict
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: read
+      packages: write
+    env:
+      VERSION: ${{ inputs.version }}
+      PREVIOUS: ${{ inputs.previous }}
+      REVIEW_BUMP: ${{ inputs.review_bump }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --extra tooling --extra dev
+      - uses: oras-project/setup-oras@v1
+        with:
+          version: 1.3.1
+      - uses: aquasecurity/setup-trivy@v0.2.4
+        with:
+          version: v0.75.0
+          cache: true
+      - name: Prepare and verify reviewed contract compatibility
+        run: |
+          uv run python scripts/supply_chain.py prepare --version "$VERSION"
+          uv run cwltool --validate build/release/waterbodies.cwl#waterbodies
+          uv run transpiler-mate baseline build/release/waterbodies.cwl --previous "$PREVIOUS" --output build/baseline.json --review-bump "$REVIEW_BUMP" --check
+      - name: Authenticate only the protected release job
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          printf '%s' "$TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          printf '%s' "$TOKEN" | oras login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+      - name: Build and publish versioned processing dependencies
+        run: |
+          for component in crop norm-diff otsu stac; do
+            image="ghcr.io/eoap/waterbodies-$component:$VERSION"
+            docker build --build-arg VERSION="$VERSION" -f "reference/containers/$component/Dockerfile" -t "$image" .
+            docker push "$image"
+          done
+      - name: Inspect real images and enforce evidence and vulnerability policy
+        run: |
+          uv run transpiler-mate cwl2sbom --platform linux/amd64 --output build/sbom build/release/waterbodies.cwl#waterbodies
+          uv run python scripts/supply_chain.py check --contract build/release/waterbodies.cwl
+          bash supply-chain/policy/scan.sh
+      - name: Pin execution identities and package reviewed application
+        run: |
+          uv run python scripts/supply_chain.py prepare --version "$VERSION" --lock build/sbom/images.lock.json
+          uv run cwltool --validate build/release/waterbodies.cwl#waterbodies
+          uv run python scripts/supply_chain.py check --contract build/release/waterbodies.cwl
+          uv run transpiler-mate cwl2oci --output build/annotations.json build/release/waterbodies.cwl#waterbodies
+          bash supply-chain/oras/package.sh "$VERSION" build/release/waterbodies.cwl build/annotations.json
+      - name: Associate evidence on a candidate and promote its immutable subject
+        run: |
+          bash supply-chain/oras/publish.sh "$VERSION"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-evidence
+          path: |
+            build/release
+            build/sbom
+            build/baseline.json
+            build/annotations.json

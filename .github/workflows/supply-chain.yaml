@@ -1,0 +1,24 @@
+name: supply-chain
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --extra tooling --extra dev
+      - uses: oras-project/setup-oras@v1
+        with:
+          version: 1.3.1
+      - run: uv run python scripts/supply_chain.py inventory
+      - run: uv run pytest tests/supply_chain
+      - run: uv run bash scripts/derive.sh reference/waterbodies.cwl build/derived
+      - run: uv run transpiler-mate baseline modules/11-assure-the-contract/v2/waterbodies.cwl --previous modules/11-assure-the-contract/v1/waterbodies.cwl --output build/lesson-baseline.json --review-bump major --check

@@ -1,0 +1,22 @@
+name: quality
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked --extra tooling --extra dev
+      - run: uv run ruff format --check reference/src scripts tests
+      - run: uv run ruff check reference/src scripts tests
+      - run: uv run mypy
+      - run: uv run bandit -r reference/src scripts -x reference/src/waterbodies/waterbodies.py
+      - run: uv run pytest tests/tools tests/learning
