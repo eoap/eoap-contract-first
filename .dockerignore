@@ -1,0 +1,6 @@
+.git
+.venv
+.hatch
+build
+site
+__pycache__
