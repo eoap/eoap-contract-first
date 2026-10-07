@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "previous_version": "1.0.0",
+  "current_version": "2.0.0",
+  "minimum_bump": "major",
+  "minimum_version": "2.0.0",
+  "suggested_version": "2.0.0",
+  "review_required": false,
+  "review_bump": "major",
+  "declared_version_sufficient": true,
+  "findings": [
+    {
+      "rule": "behavior.changed",
+      "path": "/processes/norm-diff/inputs/rasters/type/name",
+      "category": "behavior",
+      "minimum_bump": "none",
+      "review_required": true,
+      "message": "Behavioral compatibility requires review.",
+      "before": "_:c3fc5a8a-7973-4209-8900-060dc99bbddc",
+      "after": "_:f146566f-da3a-4682-9ca6-a616f42ea73c",
+      "before_present": true,
+      "after_present": true
+    },
+    {
+      "rule": "behavior.changed",
+      "path": "/processes/waterbodies/inputs/bands/type/name",
+      "category": "behavior",
+      "minimum_bump": "none",
+      "review_required": true,
+      "message": "Behavioral compatibility requires review.",
+      "before": "_:cccb19a1-dc8f-4e32-8c6b-944ce75ebdca",
+      "after": "_:380cf452-b40c-4a85-aece-2e61f375f5a5",
+      "before_present": true,
+      "after_present": true
+    },
+    {
+      "rule": "input.omission_removed",
+      "path": "/processes/waterbodies/inputs/epsg",
+      "category": "interface",
+      "minimum_bump": "major",
+      "review_required": false,
+      "message": "The input can no longer be omitted.",
+      "before": {
+        "id": "epsg",
+        "default": "EPSG:4326",
+        "type": "string"
+      },
+      "after": {
+        "id": "epsg",
+        "type": "string"
+      },
+      "before_present": true,
+      "after_present": true
+    },
+    {
+      "rule": "default.changed",
+      "path": "/processes/waterbodies/inputs/epsg/default",
+      "category": "behavior",
+      "minimum_bump": "none",
+      "review_required": true,
+      "message": "A default changed; omitted/null inputs may behave differently.",
+      "before": "EPSG:4326",
+      "after": null,
+      "before_present": true,
+      "after_present": false
+    }
+  ]
+}

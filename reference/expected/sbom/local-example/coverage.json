@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "scope": "Declared containers in reachable tools; runtime downloads and host software are not inspected",
+  "tools": [
+    {
+      "step": "waterbodies/crop",
+      "process": "crop",
+      "image": "127.0.0.1:32768/waterbodies-crop:1.0.0",
+      "status": "declared",
+      "reason": null,
+      "declaration": "hint"
+    },
+    {
+      "step": "waterbodies/norm-diff",
+      "process": "norm-diff",
+      "image": "127.0.0.1:32768/waterbodies-norm-diff:1.0.0",
+      "status": "declared",
+      "reason": null,
+      "declaration": "hint"
+    },
+    {
+      "step": "waterbodies/otsu",
+      "process": "otsu",
+      "image": "127.0.0.1:32768/waterbodies-otsu:1.0.0",
+      "status": "declared",
+      "reason": null,
+      "declaration": "hint"
+    },
+    {
+      "step": "waterbodies/stac",
+      "process": "stac",
+      "image": "127.0.0.1:32768/waterbodies-stac:1.0.0",
+      "status": "declared",
+      "reason": null,
+      "declaration": "hint"
+    }
+  ]
+}

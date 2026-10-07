@@ -1,0 +1,10 @@
+{
+  "inputs": {
+    "item": {"class": "Directory", "location": "REPLACE_WITH_BACKEND_ACCESSIBLE_STAGED_DIRECTORY"},
+    "aoi": "1,1,7,7",
+    "epsg": "EPSG:4326",
+    "bands": ["green", "nir"]
+  },
+  "outputs": {"stac-catalog": {"transmissionMode": "reference"}},
+  "response": "document"
+}

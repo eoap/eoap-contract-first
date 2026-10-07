@@ -1,0 +1,221 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "bom-ref": "workflow",
+      "name": "Water Bodies",
+      "version": "1.0.0"
+    },
+    "tools": [
+      {
+        "vendor": "Transpiler-Mate",
+        "name": "cwl2sbom",
+        "version": "0.1.1"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "tool-0",
+      "name": "crop",
+      "properties": [
+        {
+          "name": "transpiler-mate:step",
+          "value": "waterbodies/crop"
+        },
+        {
+          "name": "transpiler-mate:coverage",
+          "value": "declared"
+        }
+      ]
+    },
+    {
+      "type": "application",
+      "bom-ref": "tool-1",
+      "name": "norm-diff",
+      "properties": [
+        {
+          "name": "transpiler-mate:step",
+          "value": "waterbodies/norm-diff"
+        },
+        {
+          "name": "transpiler-mate:coverage",
+          "value": "declared"
+        }
+      ]
+    },
+    {
+      "type": "application",
+      "bom-ref": "tool-2",
+      "name": "otsu",
+      "properties": [
+        {
+          "name": "transpiler-mate:step",
+          "value": "waterbodies/otsu"
+        },
+        {
+          "name": "transpiler-mate:coverage",
+          "value": "declared"
+        }
+      ]
+    },
+    {
+      "type": "application",
+      "bom-ref": "tool-3",
+      "name": "stac",
+      "properties": [
+        {
+          "name": "transpiler-mate:step",
+          "value": "waterbodies/stac"
+        },
+        {
+          "name": "transpiler-mate:coverage",
+          "value": "declared"
+        }
+      ]
+    },
+    {
+      "type": "container",
+      "bom-ref": "image-aef73692a557c3546c2d853bc10e05d0ac8649b1296e04779f39022378240163",
+      "name": "127.0.0.1:32768/waterbodies-crop:1.0.0",
+      "version": "sha256:8090b1a1e8c08f98bcf84a27f312f65f951ea3929a304c3185a82ff7d487e4c3",
+      "properties": [
+        {
+          "name": "transpiler-mate:platform",
+          "value": "linux/amd64"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "bom",
+          "url": "images/aef73692a557c3546c2d853bc10e05d0ac8649b1296e04779f39022378240163.cdx.json",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "56f1c5d1c2f5554d7467797f6307fb4f4529fb00c6a135e526d44d16ec1fae28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "container",
+      "bom-ref": "image-d75a9604ae80683c988602ef07cb541e3f4386df7cfe31906ae1788149cc151f",
+      "name": "127.0.0.1:32768/waterbodies-norm-diff:1.0.0",
+      "version": "sha256:7f7dbb63ef46a0cde1c4a3c8963ffaed077e3c5ee9c969cbcba7ffc0a1bb32e9",
+      "properties": [
+        {
+          "name": "transpiler-mate:platform",
+          "value": "linux/amd64"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "bom",
+          "url": "images/d75a9604ae80683c988602ef07cb541e3f4386df7cfe31906ae1788149cc151f.cdx.json",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "74c7ab3eccdba980e6e413a4d357c84c3b30c224fc3692d72f0be3b19ba15de9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "container",
+      "bom-ref": "image-87e2f8bd7b66b418fe84a3bc634ebba12c21786339f6536ec1ecdc4b6db08c25",
+      "name": "127.0.0.1:32768/waterbodies-otsu:1.0.0",
+      "version": "sha256:d2deff10c64b83d5313eba69073c948ed521f8cdd4b89eeb96885cfbf0fe53c7",
+      "properties": [
+        {
+          "name": "transpiler-mate:platform",
+          "value": "linux/amd64"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "bom",
+          "url": "images/87e2f8bd7b66b418fe84a3bc634ebba12c21786339f6536ec1ecdc4b6db08c25.cdx.json",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "79d49bcb11965b8f5d1e27f2f284d9bcc1e1d12a47a7ff6a3bd227723e0ec856"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "container",
+      "bom-ref": "image-903e1f54024c1a3e9d1879aa47d7c91a50706361ff73cacb055e4ef56bf84373",
+      "name": "127.0.0.1:32768/waterbodies-stac:1.0.0",
+      "version": "sha256:83fb86e73cb7f67901182b873288ec26399854747ed0d9f02efaac3dcbbbc793",
+      "properties": [
+        {
+          "name": "transpiler-mate:platform",
+          "value": "linux/amd64"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "bom",
+          "url": "images/903e1f54024c1a3e9d1879aa47d7c91a50706361ff73cacb055e4ef56bf84373.cdx.json",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "c95fa25388698c9e836a190afab7391572d94bf81556d7da90f4e66a11825c00"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "workflow",
+      "dependsOn": [
+        "tool-0",
+        "tool-1",
+        "tool-2",
+        "tool-3"
+      ]
+    },
+    {
+      "ref": "tool-0",
+      "dependsOn": [
+        "image-aef73692a557c3546c2d853bc10e05d0ac8649b1296e04779f39022378240163"
+      ]
+    },
+    {
+      "ref": "tool-1",
+      "dependsOn": [
+        "image-d75a9604ae80683c988602ef07cb541e3f4386df7cfe31906ae1788149cc151f"
+      ]
+    },
+    {
+      "ref": "tool-2",
+      "dependsOn": [
+        "image-87e2f8bd7b66b418fe84a3bc634ebba12c21786339f6536ec1ecdc4b6db08c25"
+      ]
+    },
+    {
+      "ref": "tool-3",
+      "dependsOn": [
+        "image-903e1f54024c1a3e9d1879aa47d7c91a50706361ff73cacb055e4ef56bf84373"
+      ]
+    }
+  ],
+  "compositions": [
+    {
+      "aggregate": "incomplete",
+      "assemblies": [
+        "workflow"
+      ]
+    }
+  ]
+}

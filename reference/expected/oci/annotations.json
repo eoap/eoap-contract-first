@@ -1,0 +1,11 @@
+{
+  "$manifest": {
+    "org.opencontainers.image.title": "Water Bodies",
+    "org.opencontainers.image.description": "Detect water using green and near-infrared reflectance, NDWI and Otsu.",
+    "org.opencontainers.image.version": "1.0.0",
+    "org.opencontainers.image.licenses": "Apache-2.0",
+    "org.cwl.entrypoint": "waterbodies",
+    "org.cwl.spec": "v1.2",
+    "org.cwl.type": "Workflow"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "source": "file:///data/work/github.com/eoap/eoap-contract-first/build/local-registry.cwl",
+  "entrypoint": "waterbodies",
+  "platform": "linux/amd64",
+  "generated_at": "2026-10-07T04:41:23.769273+00:00",
+  "trivy_version": "0.75.0",
+  "plugin_version": "0.1.1",
+  "images": [
+    {
+      "reference": "127.0.0.1:32768/waterbodies-crop:1.0.0",
+      "platform": "linux/amd64",
+      "repository_digests": [
+        "127.0.0.1:32768/waterbodies-crop@sha256:8090b1a1e8c08f98bcf84a27f312f65f951ea3929a304c3185a82ff7d487e4c3"
+      ],
+      "image_ids": [
+        "sha256:72221d88252d9ae8a30f9f0f329588cd9eab6e46e63830ffc2538e28d1206f19"
+      ],
+      "sbom_spec_version": "1.7",
+      "sbom": "images/aef73692a557c3546c2d853bc10e05d0ac8649b1296e04779f39022378240163.cdx.json",
+      "sbom_sha256": "56f1c5d1c2f5554d7467797f6307fb4f4529fb00c6a135e526d44d16ec1fae28",
+      "bom_ref": "image-aef73692a557c3546c2d853bc10e05d0ac8649b1296e04779f39022378240163",
+      "steps": [
+        "waterbodies/crop"
+      ]
+    },
+    {
+      "reference": "127.0.0.1:32768/waterbodies-norm-diff:1.0.0",
+      "platform": "linux/amd64",
+      "repository_digests": [
+        "127.0.0.1:32768/waterbodies-norm-diff@sha256:7f7dbb63ef46a0cde1c4a3c8963ffaed077e3c5ee9c969cbcba7ffc0a1bb32e9"
+      ],
+      "image_ids": [
+        "sha256:fd297c49540b308fb6840568f030907d4256758db7b9297b67767fedd9644680"
+      ],
+      "sbom_spec_version": "1.7",
+      "sbom": "images/d75a9604ae80683c988602ef07cb541e3f4386df7cfe31906ae1788149cc151f.cdx.json",
+      "sbom_sha256": "74c7ab3eccdba980e6e413a4d357c84c3b30c224fc3692d72f0be3b19ba15de9",
+      "bom_ref": "image-d75a9604ae80683c988602ef07cb541e3f4386df7cfe31906ae1788149cc151f",
+      "steps": [
+        "waterbodies/norm-diff"
+      ]
+    },
+    {
+      "reference": "127.0.0.1:32768/waterbodies-otsu:1.0.0",
+      "platform": "linux/amd64",
+      "repository_digests": [
+        "127.0.0.1:32768/waterbodies-otsu@sha256:d2deff10c64b83d5313eba69073c948ed521f8cdd4b89eeb96885cfbf0fe53c7"
+      ],
+      "image_ids": [
+        "sha256:602ab769a8f25055b99c61c1d4aaac654d9f93b7cd2666fcddd6f9fe3c0ad706"
+      ],
+      "sbom_spec_version": "1.7",
+      "sbom": "images/87e2f8bd7b66b418fe84a3bc634ebba12c21786339f6536ec1ecdc4b6db08c25.cdx.json",
+      "sbom_sha256": "79d49bcb11965b8f5d1e27f2f284d9bcc1e1d12a47a7ff6a3bd227723e0ec856",
+      "bom_ref": "image-87e2f8bd7b66b418fe84a3bc634ebba12c21786339f6536ec1ecdc4b6db08c25",
+      "steps": [
+        "waterbodies/otsu"
+      ]
+    },
+    {
+      "reference": "127.0.0.1:32768/waterbodies-stac:1.0.0",
+      "platform": "linux/amd64",
+      "repository_digests": [
+        "127.0.0.1:32768/waterbodies-stac@sha256:83fb86e73cb7f67901182b873288ec26399854747ed0d9f02efaac3dcbbbc793"
+      ],
+      "image_ids": [
+        "sha256:4a01620932cf4f340ededf94b4bc0078a3ebf8164b7cf9a5a74e07f4b43d689f"
+      ],
+      "sbom_spec_version": "1.7",
+      "sbom": "images/903e1f54024c1a3e9d1879aa47d7c91a50706361ff73cacb055e4ef56bf84373.cdx.json",
+      "sbom_sha256": "c95fa25388698c9e836a190afab7391572d94bf81556d7da90f4e66a11825c00",
+      "bom_ref": "image-903e1f54024c1a3e9d1879aa47d7c91a50706361ff73cacb055e4ef56bf84373",
+      "steps": [
+        "waterbodies/stac"
+      ]
+    }
+  ]
+}
