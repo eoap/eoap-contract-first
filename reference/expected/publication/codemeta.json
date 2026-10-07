@@ -1,0 +1,41 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "codeRepository": "https://github.com/eoap/waterbodies-learning.git",
+  "continuousIntegration": "https://github.com/eoap/waterbodies-learning/actions",
+  "issueTracker": "https://github.com/eoap/waterbodies-learning/issues",
+  "relatedLink": [
+    "https://github.com/eoap/waterbodies-learning/wiki",
+    "https://github.com/eoap/waterbodies-learning/releases",
+    "https://github.com/eoap/waterbodies-learning/deployments"
+  ],
+  "targetProduct": {
+    "@type": "SoftwareApplication",
+    "author": {
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "class": "s:Organization",
+        "name": "Terradue"
+      },
+      "class": "s:Person",
+      "email": "fabrice.brito@terradue.com",
+      "familyName": "Brito",
+      "givenName": "Fabrice"
+    },
+    "dateCreated": "2026-10-07",
+    "description": "Detect water using green and near-infrared reflectance, NDWI and Otsu.",
+    "license": "https://spdx.org/licenses/Apache-2.0",
+    "name": "Water Bodies",
+    "publisher": {
+      "@type": "Organization",
+      "class": "s:Organization",
+      "name": "EOAP"
+    },
+    "softwareHelp": {
+      "@type": "CreativeWork",
+      "url": "https://github.com/eoap/waterbodies-learning"
+    },
+    "softwareVersion": "1.0.0"
+  }
+}

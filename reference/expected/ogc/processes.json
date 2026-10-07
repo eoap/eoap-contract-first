@@ -1,0 +1,145 @@
+{
+  "id": "waterbodies",
+  "version": "1.0.0",
+  "title": "Water Bodies",
+  "description": "Detect water from a staged STAC Item using NDWI and Otsu.",
+  "metadata": [
+    {
+      "field_type": "https://schema.org/SoftwareApplication",
+      "name": "Water Bodies",
+      "description": "Detect water using green and near-infrared reflectance, NDWI and Otsu.",
+      "date_created": "2026-10-07",
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "software_version": "1.0.0",
+      "software_help": {
+        "field_type": "https://schema.org/CreativeWork",
+        "url": "https://github.com/eoap/waterbodies-learning"
+      },
+      "publisher": {
+        "field_type": "https://schema.org/Organization",
+        "name": "EOAP",
+        "https://schema.org/class": "s:Organization"
+      },
+      "author": {
+        "field_type": "https://schema.org/Person",
+        "given_name": "Fabrice",
+        "family_name": "Brito",
+        "email": "fabrice.brito@terradue.com",
+        "affiliation": {
+          "field_type": "https://schema.org/Organization",
+          "name": "Terradue",
+          "https://schema.org/class": "s:Organization"
+        },
+        "https://schema.org/class": "s:Person"
+      }
+    }
+  ],
+  "jobControlOptions": "async-execute",
+  "inputs": {
+    "item": {
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "format": "uri"
+          },
+          {
+            "$ref": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json"
+          },
+          {
+            "$ref": "https://schemas.stacspec.org/v1.0.0/collection-spec/json-schema/collection.json"
+          },
+          {
+            "$ref": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml"
+          }
+        ]
+      },
+      "metadata": [
+        {
+          "title": "cwl:type",
+          "value": "Directory"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1,
+      "valuePassing": "byValue"
+    },
+    "aoi": {
+      "schema": {
+        "type": "string"
+      },
+      "metadata": [
+        {
+          "title": "cwl:type",
+          "value": "string"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1,
+      "valuePassing": "byValue"
+    },
+    "epsg": {
+      "schema": {
+        "type": "string",
+        "default": "EPSG:4326"
+      },
+      "metadata": [
+        {
+          "title": "cwl:type",
+          "value": "string"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1,
+      "valuePassing": "byValue"
+    },
+    "bands": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "green",
+          "nir"
+        ]
+      },
+      "metadata": [
+        {
+          "title": "cwl:type",
+          "value": "string[]"
+        }
+      ],
+      "minOccurs": 1,
+      "maxOccurs": 1,
+      "valuePassing": "byValue"
+    }
+  },
+  "outputs": {
+    "stac-catalog": {
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "format": "uri"
+          },
+          {
+            "$ref": "https://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json"
+          },
+          {
+            "$ref": "https://schemas.stacspec.org/v1.0.0/collection-spec/json-schema/collection.json"
+          },
+          {
+            "$ref": "https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml"
+          }
+        ]
+      },
+      "metadata": [
+        {
+          "title": "cwl:type",
+          "value": "Directory"
+        }
+      ]
+    }
+  }
+}

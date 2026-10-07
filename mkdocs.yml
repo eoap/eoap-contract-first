@@ -1,0 +1,38 @@
+site_name: Water Bodies learning
+site_url: https://eoap.github.io/waterbodies-learning/
+repo_url: https://github.com/eoap/waterbodies-learning
+strict: true
+theme:
+  name: material
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+nav:
+  - Home: index.md
+  - Learning path: learning-path.md
+  - Prerequisites: prerequisites.md
+  - Architecture: architecture.md
+  - Modules:
+      - "00 - Understand Water Bodies": modules/00-waterbodies/README.md
+      - "01 - Design the contract": modules/01-design-the-contract/README.md
+      - "02 - Derive the CLI": modules/02-derive-the-cli/README.md
+      - "03 - Implement crop": modules/03-implement-crop/README.md
+      - "04 - Implement normalized difference": modules/04-implement-norm-diff/README.md
+      - "05 - Implement Otsu": modules/05-implement-otsu/README.md
+      - "06 - Implement STAC": modules/06-implement-stac/README.md
+      - "07 - Compose the workflow": modules/07-compose-the-workflow/README.md
+      - "08 - Containerize": modules/08-containerize/README.md
+      - "09 - Run the application": modules/09-run-the-application/README.md
+      - "10 - Derive artifacts": modules/10-derive-artifacts/README.md
+      - "11 - Evolve and assure the contract": modules/11-assure-the-contract/README.md
+      - "12 - Publish research software": modules/12-publish-research-software/README.md
+      - "13 - Secure, promote and deploy": modules/13-secure-promote-deploy/README.md
+  - Supply chain: supply-chain.md
+  - Deployment: deployment.md
+  - Reference: reference.md
+  - Contributing: contributing.md
+  - Glossary: glossary.md

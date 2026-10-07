@@ -1,0 +1,6 @@
+bands: ["green", "nir"]  # array of type 'string'
+epsg: "EPSG:4326"  # default value of type 'string'.
+aoi: a_string  # type 'string'
+item:  # type 'Directory'
+    class: Directory
+    path: a/directory/path
