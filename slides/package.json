@@ -1,0 +1,16 @@
+{
+  "name": "eoap-teacher-slides",
+  "private": true,
+  "scripts": {
+    "preview": "marp --server --watch . --theme-set themes/eoap.css",
+    "html": "marp teacher-deck.md --theme-set themes/eoap.css -o ../build/slides/teacher-deck.html",
+    "pdf": "marp teacher-deck.md --theme-set themes/eoap.css --allow-local-files --pdf --pdf-notes --pdf-outlines -o ../build/slides/teacher-deck.pdf",
+    "notes": "marp teacher-deck.md --theme-set themes/eoap.css --notes -o ../build/slides/teacher-notes.txt"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "4.5.1"
+  },
+  "overrides": {
+    "@xmldom/xmldom": "0.9.12"
+  }
+}
