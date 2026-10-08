@@ -1,13 +1,18 @@
 # Exercise — Understand Water Bodies
 
-Open `scripts/fixtures.py`. Identify the green/nir values for each half of the image. Predict NDWI and the number of water pixels after cropping to 1,1,7,7.
+Open the [guided notebook](waterbodies.ipynb) to explore the spectral bands, predict NDWI, crop the scene and inspect the water mask and its STAC metadata.
 
-From the repository root:
+From the repository root, install the notebook environment and launch JupyterLab:
 
 ```console
-uv run pytest tests/tools/test_processing.py::test_complete_scientific_chain
+uv sync --extra notebook
+uv run --extra notebook jupyter lab docs/modules/00-waterbodies/waterbodies.ipynb
 ```
 
-Expected outcome: NDWI is -0.5 on the left, +0.5 on the right; the 6×6 crop contains 18 water pixels.
+In JupyterLab, use the Python 3 kernel and run cells in order with **Shift+Enter**. In VS Code, open the same notebook and select the repository `.venv/bin/python` interpreter.
 
-Compare [the solution](solution.md). Return to [the module](README.md).
+The activity uses local synthetic data and writes results into a fresh run directory under `.notebook-runs/`. Predict before running each stage, compare your predictions with the plots, then experiment with the AOI and band order. Restart the kernel and run all cells to repeat the activity from scratch.
+
+**Expected outcome:** You can explain the observed NDWI values and water-pixel count, inspect the packaged STAC result, and describe how changing the AOI or band order affects classification.
+
+Explain why band order and matching raster grids matter to the workflow contract. Compare [the solution](solution.md) after completing the activity. Return to [the module](README.md).

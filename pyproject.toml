@@ -325,6 +325,7 @@ check = [
 
 # Provide test extras for editable installations.
 [project.optional-dependencies]
+notebook = ["jupyterlab>=4,<5", "matplotlib>=3.9,<4", "nbclient>=0.10,<1"]
 tooling = [
   "transpiler-mate-runtime @ git+https://github.com/transpiler-mate/transpiler-mate-runtime.git@c55100e21d9e009f5ac67147794225547666f7cd",
   "cwl-loader @ git+https://github.com/transpiler-mate/cwl-loader.git@a51369615c16443b46bf7f63d1971d4acb389174",
