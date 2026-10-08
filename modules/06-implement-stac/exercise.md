@@ -1,6 +1,12 @@
 # Exercise — Implement STAC
 
-Run uv run waterbodies stac --input-item data/fixtures/source --water-body otsu.tif from the repository root after creating the mask there, or substitute absolute paths from your scratch directory. Read catalog/synthetic/synthetic.json and follow its links. Change a projection shape to one element and rerun validation.
+Run
+
+```console
+uv run waterbodies stac --input-item data/fixtures/source --water-body otsu.tif
+```
+
+from the repository root after creating the mask there, or substitute absolute paths from your scratch directory. Read catalog/synthetic/synthetic.json and follow its links. Change a projection shape to one element and rerun validation.
 
 From the repository root:
 
