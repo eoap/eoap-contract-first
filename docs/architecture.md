@@ -1,51 +1,94 @@
 # Architecture and upstream evidence
 
-Research performed against actual source, tests, examples and documentation on 2026-10-07. Tooling Git dependencies are pinned in pyproject.toml and uv.lock; docs/upstream-lock.json records projection revisions. The source anchors below make the choices reviewable.
+Research performed against actual source, tests, examples and documentation on 2026-10-07. Release references below were checked on 2026-10-08: prefer an available PyPI version, otherwise the latest Git tag, rather than a commit hash. These release references are distinct from the historical projection revisions recorded in [upstream-lock.json](upstream-lock.json) and the verification record below.
 
-| Repository | Inspected revision |
-| --- | --- |
-| [advanced-tooling](https://github.com/eoap/advanced-tooling/tree/bc3aef3cf43fca5fe961e6c6825fe1ed38294d80) | `bc3aef3cf43fca5fe961e6c6825fe1ed38294d80` |
-| [application-package-patterns](https://github.com/eoap/application-package-patterns/tree/9c07fade21a06f718111ae853a154a680a82ebf0) | `9c07fade21a06f718111ae853a154a680a82ebf0` |
-| [cwl-baseline-plugin](https://github.com/transpiler-mate/cwl-baseline-plugin/tree/63d5c7697bbb6e66d5687f4ef88eb36ccc155e7e) | `63d5c7697bbb6e66d5687f4ef88eb36ccc155e7e` |
-| [cwl-loader](https://github.com/transpiler-mate/cwl-loader/tree/a51369615c16443b46bf7f63d1971d4acb389174) | `a51369615c16443b46bf7f63d1971d4acb389174` |
-| [cwl2click](https://github.com/transpiler-mate/cwl2click/tree/43ddfd6a785c41ce9c62e28d52b7143aa654f5c3) | `43ddfd6a785c41ce9c62e28d52b7143aa654f5c3` |
-| [cwl2codemeta](https://github.com/transpiler-mate/cwl2codemeta/tree/49ff46d301d90e347861ed4d29bad838526abb57) | `49ff46d301d90e347861ed4d29bad838526abb57` |
-| [cwl2inputs](https://github.com/transpiler-mate/cwl2inputs/tree/f417674eb87374b39c9b7f4d5dd6cdfc8e098597) | `f417674eb87374b39c9b7f4d5dd6cdfc8e098597` |
-| [cwl2markdown](https://github.com/transpiler-mate/cwl2markdown/tree/17ea06d1eae4452a2e17c8b6c104dc5624122c44) | `17ea06d1eae4452a2e17c8b6c104dc5624122c44` |
-| [cwl2oci](https://github.com/transpiler-mate/cwl2oci/tree/ea662e629435e7d7f556674af071a905d605bf62) | `ea662e629435e7d7f556674af071a905d605bf62` |
-| [cwl2ogc](https://github.com/transpiler-mate/cwl2ogc/tree/2ae57d69f835e39d02ecaf851bc3da9ea7cb061f) | `2ae57d69f835e39d02ecaf851bc3da9ea7cb061f` |
-| [cwl2puml](https://github.com/transpiler-mate/cwl2puml/tree/3bc0efd5efdc450e58a3a60c9e5451a6dafe187f) | `3bc0efd5efdc450e58a3a60c9e5451a6dafe187f` |
-| [cwl2sbom](https://github.com/transpiler-mate/cwl2sbom/tree/fc707a129947508eebd1b26c46e4bee63c06a4bd) | `fc707a129947508eebd1b26c46e4bee63c06a4bd` |
-| [mastering-app-package](https://github.com/eoap/mastering-app-package/tree/3811d5e69b6645fdcb0f5d293ce8cb2242ebd92b) | `3811d5e69b6645fdcb0f5d293ce8cb2242ebd92b` |
-| [mastering-enhancements](https://github.com/eoap/mastering-app-package/tree/12ecedd44525b6c745b211b88431d7de3b8a474e) | `12ecedd44525b6c745b211b88431d7de3b8a474e` |
-| [ogc-api-processes-with-zoo](https://github.com/eoap/ogc-api-processes-with-zoo/tree/ddfaa45b2986bf6f5a0e0d88719322544a06772c) | `ddfaa45b2986bf6f5a0e0d88719322544a06772c` |
-| [pystac](https://github.com/Terradue/pystac/tree/5941d0c361d409d35e0aeb36f6ae05b03008de71) | `5941d0c361d409d35e0aeb36f6ae05b03008de71` |
-| [transpiler-mate-api](https://github.com/transpiler-mate/transpiler-mate-api/tree/850c966e4a0d9b18a94d28508fc63c189b55280c) | `850c966e4a0d9b18a94d28508fc63c189b55280c` |
-| [transpiler-mate-runtime](https://github.com/transpiler-mate/transpiler-mate-runtime/tree/c55100e21d9e009f5ac67147794225547666f7cd) | `c55100e21d9e009f5ac67147794225547666f7cd` |
+## Application library and upstream references
+
+The EOAP repositories provide examples and architectural guidance, rather than Python dependencies. PySTAC is an application dependency and must use the Terradue fork with validation support. That fork has no Git tags; retain `pystac[validation] @ git+https://github.com/Terradue/pystac.git@t2_extensions` rather than substituting the upstream PyPI package.
+
+| Repository | Release or source reference | Role |
+| --- | --- | --- |
+| [advanced-tooling](https://github.com/eoap/advanced-tooling) | Git tag [v0.1.2](https://github.com/eoap/advanced-tooling/tree/v0.1.2) | OCI artifact and supply-chain guidance |
+| [application-package-patterns](https://github.com/eoap/application-package-patterns) | Git tag [1.1.0](https://github.com/eoap/application-package-patterns/tree/1.1.0) | Staging and workflow composition examples |
+| [mastering-app-package](https://github.com/eoap/mastering-app-package) | Git tag [1.1.1](https://github.com/eoap/mastering-app-package/tree/1.1.1) | Water Bodies source examples |
+| [mastering-enhancements](https://github.com/eoap/mastering-app-package/tree/feature/enhancements) | `feature/enhancements` branch; no separate release | Enhancement implementations and crop tests |
+| [ogc-api-processes-with-zoo](https://github.com/eoap/ogc-api-processes-with-zoo) | Git tag [0.1.1](https://github.com/eoap/ogc-api-processes-with-zoo/tree/0.1.1) | Deployment and execution guidance |
+| [pystac (Terradue fork)](https://github.com/Terradue/pystac) | [t2_extensions](https://github.com/Terradue/pystac/tree/t2_extensions) branch; no tags | STAC objects, extension APIs and validation |
+
+## Standalone CLI tooling
+
+Transpiler-Mate and its plugins can run as CLI tools in a separate tooling environment; they do not need to be included in any `pyproject.toml`. Install the runtime and the required plugins into the same environment so `transpiler-mate` can discover them. Supporting modules are installed as runtime dependencies; attendees interact with the runtime CLI and its plugins. The repository currently declares a `tooling` extra for its own generation and verification workflow; that is a repository convenience, not an application packaging requirement.
+
+| Tooling package | PyPI version | Role |
+| --- | --- | --- |
+| [transpiler-mate-runtime](https://github.com/transpiler-mate/transpiler-mate-runtime) | [1.3.0](https://pypi.org/project/transpiler-mate-runtime/1.3.0/) | `transpiler-mate` CLI and plugin discovery |
+| [transpiler-mate-api](https://github.com/transpiler-mate/transpiler-mate-api) | [1.0.1](https://pypi.org/project/transpiler-mate-api/1.0.1/) | Shared plugin API dependency |
+| [cwl-baseline-plugin](https://github.com/transpiler-mate/cwl-baseline-plugin) | [0.1.1](https://pypi.org/project/cwl-baseline-plugin/0.1.1/) | Baseline comparison plugin |
+| [cwl2click](https://github.com/transpiler-mate/cwl2click) | [0.10.1](https://pypi.org/project/cwl2click/0.10.1/) | Click CLI generation plugin |
+| [cwl2codemeta](https://github.com/transpiler-mate/cwl2codemeta) | [0.1.1](https://pypi.org/project/cwl2codemeta/0.1.1/) | CodeMeta generation plugin |
+| [cwl2inputs](https://github.com/transpiler-mate/cwl2inputs) | [0.1.1](https://pypi.org/project/cwl2inputs/0.1.1/) | Input template generation plugin |
+| [cwl2markdown](https://github.com/transpiler-mate/cwl2markdown) | [0.2.1](https://pypi.org/project/cwl2markdown/0.2.1/) | Markdown documentation plugin |
+| [cwl2oci](https://github.com/transpiler-mate/cwl2oci) | [0.1.1](https://pypi.org/project/cwl2oci/0.1.1/) | OCI annotation generation plugin |
+| [cwl2ogc](https://github.com/transpiler-mate/cwl2ogc) | [0.22.2](https://pypi.org/project/cwl2ogc/0.22.2/) | OGC process description plugin |
+| [cwl2puml](https://github.com/transpiler-mate/cwl2puml) | [0.49.1](https://pypi.org/project/cwl2puml/0.49.1/) | PlantUML generation plugin |
+| [cwl2sbom](https://github.com/transpiler-mate/cwl2sbom) | [0.1.1](https://pypi.org/project/cwl2sbom/0.1.1/) | Software inventory generation plugin |
 
 ## Design decisions
 
-The canonical `$graph` contains #waterbodies and four tools. Its generated interface is one waterbodies group. Hyphenated ids resolve in cwl-utils/cwl-loader, cwl2click converts Python symbols to snake_case, and the complete cwltool execution proves workflow references and repeated File[] options work.
+The canonical `$graph` contains #waterbodies and four tools. Its generated interface is one waterbodies group. The runtime resolves the workflow and its tool references, while cwl2click generates the command-line interface. The complete cwltool execution verifies workflow references and repeated raster-file options.
 
 The Water Bodies source is `mastering-app-package/water-bodies/command-line-tools/*/app.py`, plus `feature/enhancements` implementations and crop tests under the same component tree. Preserve EO common-band selection, AOI transformation, COG writes, `(green-nir)/(green+nir)`, Otsu strict greater-than, and the original Item identity/time in a self-contained result catalog. Enhancements supply grid checking, AOI polygons, finite-value classification and safe Item paths.
 
 The source input is a staged Directory with catalog.json, Item JSON and local bands. Crop and STAC use PySTAC. Projection and Raster extension accessors replace the older rio-stac serialization path; metadata expresses the same cropped-grid product semantics. Geometry is built as an input value to a PySTAC Item, never as a handwritten STAC Item representation. We bundle official EO v1.1.0, projection v2.0.0 and raster v1.1.0 schemas and use PySTAC validation unchanged. Schema `$id` values identify the original sources. Schema files are upstream artifacts, not generated Python models.
 
-## Verified APIs and deviations
+## Tool purposes and upstream guidance
 
-- `cwl2click/src/cwl2click/plugin.py` writes a bundled module using the source stem and imports `{id}_impl.execute`. Its shipped Jinja template defines the group and options. Generated files remain unmodified; formatting/linting excludes only the generated artifact, whose structure is checked against fresh upstream generation.
-- File[] needs an empty outer inputBinding plus per-item --rasters binding. Setting both prefixes repeats a stray array-level option. This is covered by an actual runner test.
-- `cwl-loader` dereferences graph steps and returns typed cwl-utils process objects. No duplicate CWL models are handwritten. Generated statement order and timestamps vary; tests compare parsed Python statements.
-- Runtime context resolution and `transpiler-mate-api` normalize Schema.org software metadata and expose plugin execution contexts. We use their plugin discovery and options directly.
-- Current cwl2markdown 17ea06d ships `.md.jinja` files while requesting `.md`. The previous official 0.2.0 release renders correctly but pins API 1.0.0, conflicting with current runtime's API >=1.0.1 requirement. The narrow filename adapter in scripts/markdown_compat.py preserves all upstream rendering, with mutually compatible current versions. Actual output is waterbodies.md.jinja.
-- cwl2puml emits PlantUML without an external rendering service; cwl2inputs generates templates that still need real locations; cwl2ogc emits a process description, not a deployment service.
-- cwl2oci emits a JSON `$manifest` wrapper consumed by ORAS --annotation-file. It builds no artifact and performs no publication.
-- cwl2sbom's discovery follows reachable tools, Trivy resolves images for an explicit platform, and generation writes workflow/image inventories plus lock and coverage evidence. Its workflow composition remains `incomplete` because undeclared runtime software is outside scope. It does not enforce vulnerability policy, sign, attach or publish.
-- Baseline compares every normalized process and requires review for behavioral changes. Anonymous array schema names currently differ between loads and can create review findings. The known EPSG-default removal example is explicitly reviewed as major; release CI requires an independently supplied review classification.
-- cwl2codemeta is verified and generates CodeMeta 3.0. CITATION.cff is editorial repository metadata. No unverified DataCite, RO-Crate or citation-generation functionality is claimed.
-- advanced-tooling/docs/oci-artifacts.md establishes application/cwl and separate ORAS attachments; we use CycloneDX's media type instead of its SPDX example because cwl2sbom emits CycloneDX.
-- application-package-patterns demonstrates explicit staging and workflow composition. We keep staging outside the scientific tools, and do not confuse a staged Directory with a remote URL.
-- ogc-api-processes-with-zoo/docs/deploy-application.md verifies POST /processes?w=... with application/cwl+yaml. Its index, execute-monitor-process and package tutorials verify discovery, descriptions, execution, job status/results and package retrieval. No automatic OCI deploy endpoint is assumed: pull the promoted artifact first and deploy its bytes.
+### Standalone CLI tooling
+
+#### Transpiler-Mate runtime
+
+`transpiler-mate-runtime` provides the `transpiler-mate` command. It loads the selected CWL process, resolves references to workflow steps and tools, and prepares the software metadata for the installed plugins. Attendees use this common entry point to generate different artifacts from the same contract. Run `transpiler-mate --help` to discover installed plugins and `transpiler-mate <plugin> --help` for their options.
+
+The purpose-based groups below follow the [Transpiler-Mate project tables](https://github.com/transpiler-mate/), covering the plugins listed in our tooling table. Repository-specific verification notes refer to the source revisions inspected on 2026-10-07; they do not establish verification of every release listed above.
+
+#### Software generation
+
+- **cwl2click** generates a Python Click command-line interface from CWL tool definitions. In Water Bodies, it keeps the command names and input options aligned with the contract while the application supplies the scientific operations. The generated interface is checked against fresh generation and exercised through the workflow runner, including multiple raster-file inputs.
+- **cwl2inputs** creates YAML input templates for a selected process. Attendees fill in the actual data locations and parameter values before running the workflow.
+- **cwl2oci** produces OCI annotations describing the software and CWL process. These annotations accompany the package when ORAS publishes it; artifact assembly and publication are separate pipeline steps.
+
+#### Documentation generation
+
+- **cwl2markdown** turns the CWL contract and software metadata into readable workflow documentation. The inspected version requires a repository compatibility adapter for documentation generation; this is a historical verification note, not a requirement established for every published version.
+- **cwl2puml** creates PlantUML workflow diagrams to help readers understand the processing steps and their connections. This course generates diagram source without relying on an external rendering service.
+
+#### Format conversion
+
+**cwl2ogc** generates an OGC API – Processes description of the workflow's inputs and outputs. This provides the service-facing contract; deployment and execution are handled by the processing service described below.
+
+#### FAIR research software metadata
+
+**cwl2codemeta** exports embedded software metadata as CodeMeta JSON-LD, helping others discover and describe the workflow. CodeMeta 3.0 generation is verified in this repository. The repository's `CITATION.cff` is maintained separately; citation generation, DataCite exports and RO-Crate packaging are outside this course's verified tooling scope.
+
+#### Analysis and reporting
+
+**cwl-baseline-plugin** compares CWL releases and reports compatibility changes with a minimum semantic-version increment. Reviewers use the report alongside their assessment of changes to scientific behavior. In this course, removing the EPSG default is reviewed as a major change, and release CI requires an independent review classification. The inspected version can also report differences caused by automatically assigned array-schema names, so findings need review.
+
+#### Software supply-chain inspection
+
+**cwl2sbom** inventories the containers referenced by the selected workflow, including reachable tools. With Trivy and an explicit target platform, it produces workflow and image inventories, image identities and coverage evidence. Undeclared runtime software remains outside that inventory, and the inspected workflow composition is marked `incomplete`. Vulnerability policy checks, signing and publication belong to subsequent pipeline steps.
+
+### Application library and upstream references
+
+**PySTAC** provides STAC Item creation, asset and link management, extension metadata and validation for the scientific application. The Terradue fork is the application library used here; the projection and raster extensions describe the cropped products, and output Items are validated with their declared schemas.
+
+**mastering-app-package** supplies the Water Bodies processing example, with additional validation and crop behavior drawn from its enhancements branch. These sources establish the scientific behavior preserved by the contract-first implementation described above.
+
+**application-package-patterns** guides explicit data staging and workflow composition. The scientific tools receive a staged directory containing the catalog and local assets; staging remote data is a separate responsibility.
+
+**advanced-tooling** guides CWL packaging as OCI artifacts and the use of separate ORAS attachments. This course uses the CycloneDX media type for the generated software inventories.
+
+**ogc-api-processes-with-zoo** guides process deployment, discovery, execution, job monitoring and result retrieval. The deployment flow pulls the promoted OCI artifact and submits its CWL bytes to `POST /processes?w=...` with `application/cwl+yaml`; the workflow's generated process description supports the service interface.
 
 ## Boundaries
 
