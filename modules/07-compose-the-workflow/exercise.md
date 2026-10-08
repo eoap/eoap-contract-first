@@ -1,6 +1,12 @@
 # Exercise — Compose the workflow
 
-Draw every source-to-input edge in reference/waterbodies.cwl. Run task workflow:run. Find both crop executions in the runner log and check their order in the normalized difference invocation.
+Draw every source-to-input edge in reference/waterbodies.cwl. Run
+
+```console
+task workflow:run
+```
+
+Find both crop executions in the runner log and check their order in the normalized difference invocation.
 
 From the repository root:
 
