@@ -78,7 +78,53 @@ cwltool tool.cwl inputs.yaml
 
 The first command checks the tool definition; the second also checks job inputs and executes the command. Exercise missing required fields and wrong field types as well as valid values. Verify the resulting arguments and outputs to check that bindings preserve the intended meaning.
 
-[CWL structural types have limits](https://eoap.github.io/schemas/explanation/custom-types/): a named record does not enforce every rule of the external standard it represents. Application checks still need to cover constraints such as valid band names, bounding-box length and coordinate semantics. The shared `URI` and `DateTime` records contain strings; their names alone do not validate those formats. Similarly, a STAC metadata record does not replace the staged `Directory` and local assets required by our crop tool.
+### Make the meaning of strings explicit
+
+Consider a future tool that accepts an acquisition time and a source metadata URI. Both values can be carried by ordinary CWL strings:
+
+```yaml
+inputs:
+  acquired_at:
+    type: string
+  source_uri:
+    type: string
+```
+
+A job could supply:
+
+```yaml
+acquired_at: "2024-01-01T00:00:00Z"
+source_uri: "https://example.org/stac/items/scene-001.json"
+```
+
+These values convey different concepts, but `string` alone does not describe their formats. Swapping the values would still satisfy the declared field types. A reader must infer the intended meaning from input names and accompanying documentation.
+
+The shared [string-format schemas](https://github.com/eoap/schemas/blob/main/string_format.yaml) make those concepts explicit and reusable. In a scratch tool, import them and select the named `DateTime` and `URI` records:
+
+```yaml
+requirements:
+  SchemaDefRequirement:
+    types:
+      - $import: https://raw.githubusercontent.com/eoap/schemas/main/string_format.yaml
+inputs:
+  acquired_at:
+    type: https://raw.githubusercontent.com/eoap/schemas/main/string_format.yaml#DateTime
+  source_uri:
+    type: https://raw.githubusercontent.com/eoap/schemas/main/string_format.yaml#URI
+```
+
+Each record has a required string field named `value`, so the matching job becomes:
+
+```yaml
+acquired_at:
+  value: "2024-01-01T00:00:00Z"
+source_uri:
+  value: "https://example.org/stac/items/scene-001.json"
+```
+
+The contract now names the intended concepts and links them to shared format documentation. Other tools can reuse the same definitions, and generated documentation can expose that meaning consistently. CWL checks the record structure, including the required `value` field and its string type. Bindings must extract that field, for example with `$(inputs.acquired_at.value)`, when passing the value to a command. As with `BBox`, adopting these records changes the input interface; explore them in the scratch tool and pin the schema revision before using them in a reproducible contract.
+
+Custom schemas and application validation work together. These records document the intended formats; their string fields do not themselves reject an invalid timestamp or URI, or a swap of the two payloads. Application checks enforce those semantics, just as they enforce valid band names and bounding-box coordinate rules. The [custom-type explanation](https://eoap.github.io/schemas/explanation/custom-types/) describes this distinction between structure and meaning. A source URI also identifies metadata rather than staging its files: our crop tool still requires a `Directory` containing the catalog and local assets.
 
 ## Contract questions
 
