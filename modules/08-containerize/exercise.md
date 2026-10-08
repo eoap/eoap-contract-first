@@ -1,6 +1,18 @@
 # Exercise — Containerize
 
-Run task containers:build VERSION=1.0.0 with Docker available. Inspect each image and run docker run --rm ghcr.io/eoap/waterbodies-crop:1.0.0 waterbodies crop --help. Compare a tag with an inspected digest.
+Run
+
+```console
+task containers:build VERSION=1.0.0
+```
+
+with Docker available. Inspect each image and run
+
+```console
+docker run --rm ghcr.io/eoap/waterbodies-crop:1.0.0 waterbodies crop --help.
+```
+
+Compare a tag with an inspected digest.
 
 From the repository root:
 
