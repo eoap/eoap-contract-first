@@ -1,6 +1,6 @@
 # Design the contract
 
-The public processing API belongs in CWL. A CommandLineTool declares its id, `baseCommand`, input types, bindings and file outputs. Directory means a staged catalog with local assets; File means a runner-managed raster. Strings describe the AOI, CRS and band common name. Required inputs and defaults determine whether clients may omit a value.
+The public processing API belongs in CWL. A [CommandLineTool](https://www.commonwl.org/v1.2/CommandLineTool.html#CommandLineTool) declares its `id`, `baseCommand`, input types, bindings and file outputs. [Directory](https://www.commonwl.org/v1.2/CommandLineTool.html#Directory) means a staged catalog with local assets; [File](https://www.commonwl.org/v1.2/CommandLineTool.html#File) means a runner-managed raster. Strings describe the AOI, CRS and band common name. Required inputs and defaults determine whether clients may omit a value.
 
 Read the four tools in `reference/waterbodies.cwl` without looking at Python. The crop contract tells you precisely what implementation must accept and which file it must produce. An output glob is part of the API: naming a file differently breaks collection even if the algorithm succeeds. Contract design is top-down; testing the implementation and workflow proceeds bottom-up. Contract and implementation are distinct artifacts.
 
