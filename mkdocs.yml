@@ -4,6 +4,8 @@ repo_url: https://github.com/eoap/waterbodies-learning
 strict: true
 theme:
   name: material
+  features:
+    - content.code.copy
 markdown_extensions:
   - admonition
   - pymdownx.superfences:
@@ -17,20 +19,76 @@ nav:
   - Prerequisites: prerequisites.md
   - Architecture: architecture.md
   - Modules:
-      - "00 - Understand Water Bodies": modules/00-waterbodies/README.md
-      - "01 - Design the contract": modules/01-design-the-contract/README.md
-      - "02 - Derive the CLI": modules/02-derive-the-cli/README.md
-      - "03 - Implement crop": modules/03-implement-crop/README.md
-      - "04 - Implement normalized difference": modules/04-implement-norm-diff/README.md
-      - "05 - Implement Otsu": modules/05-implement-otsu/README.md
-      - "06 - Implement STAC": modules/06-implement-stac/README.md
-      - "07 - Compose the workflow": modules/07-compose-the-workflow/README.md
-      - "08 - Containerize": modules/08-containerize/README.md
-      - "09 - Run the application": modules/09-run-the-application/README.md
-      - "10 - Derive artifacts": modules/10-derive-artifacts/README.md
-      - "11 - Evolve and assure the contract": modules/11-assure-the-contract/README.md
-      - "12 - Publish research software": modules/12-publish-research-software/README.md
-      - "13 - Secure, promote and deploy": modules/13-secure-promote-deploy/README.md
+      - "00 - Understand Water Bodies":
+          - Overview: modules/00-waterbodies/README.md
+          - Lesson: modules/00-waterbodies/lesson.md
+          - Exercise: modules/00-waterbodies/exercise.md
+          - Solution: modules/00-waterbodies/solution.md
+      - "01 - Design the contract":
+          - Overview: modules/01-design-the-contract/README.md
+          - Lesson: modules/01-design-the-contract/lesson.md
+          - Exercise: modules/01-design-the-contract/exercise.md
+          - Solution: modules/01-design-the-contract/solution.md
+      - "02 - Derive the CLI":
+          - Overview: modules/02-derive-the-cli/README.md
+          - Lesson: modules/02-derive-the-cli/lesson.md
+          - Exercise: modules/02-derive-the-cli/exercise.md
+          - Solution: modules/02-derive-the-cli/solution.md
+      - "03 - Implement crop":
+          - Overview: modules/03-implement-crop/README.md
+          - Lesson: modules/03-implement-crop/lesson.md
+          - Exercise: modules/03-implement-crop/exercise.md
+          - Solution: modules/03-implement-crop/solution.md
+      - "04 - Implement normalized difference":
+          - Overview: modules/04-implement-norm-diff/README.md
+          - Lesson: modules/04-implement-norm-diff/lesson.md
+          - Exercise: modules/04-implement-norm-diff/exercise.md
+          - Solution: modules/04-implement-norm-diff/solution.md
+      - "05 - Implement Otsu":
+          - Overview: modules/05-implement-otsu/README.md
+          - Lesson: modules/05-implement-otsu/lesson.md
+          - Exercise: modules/05-implement-otsu/exercise.md
+          - Solution: modules/05-implement-otsu/solution.md
+      - "06 - Implement STAC":
+          - Overview: modules/06-implement-stac/README.md
+          - Lesson: modules/06-implement-stac/lesson.md
+          - Exercise: modules/06-implement-stac/exercise.md
+          - Solution: modules/06-implement-stac/solution.md
+      - "07 - Compose the workflow":
+          - Overview: modules/07-compose-the-workflow/README.md
+          - Lesson: modules/07-compose-the-workflow/lesson.md
+          - Exercise: modules/07-compose-the-workflow/exercise.md
+          - Solution: modules/07-compose-the-workflow/solution.md
+      - "08 - Containerize":
+          - Overview: modules/08-containerize/README.md
+          - Lesson: modules/08-containerize/lesson.md
+          - Exercise: modules/08-containerize/exercise.md
+          - Solution: modules/08-containerize/solution.md
+      - "09 - Run the application":
+          - Overview: modules/09-run-the-application/README.md
+          - Lesson: modules/09-run-the-application/lesson.md
+          - Exercise: modules/09-run-the-application/exercise.md
+          - Solution: modules/09-run-the-application/solution.md
+      - "10 - Derive artifacts":
+          - Overview: modules/10-derive-artifacts/README.md
+          - Lesson: modules/10-derive-artifacts/lesson.md
+          - Exercise: modules/10-derive-artifacts/exercise.md
+          - Solution: modules/10-derive-artifacts/solution.md
+      - "11 - Evolve and assure the contract":
+          - Overview: modules/11-assure-the-contract/README.md
+          - Lesson: modules/11-assure-the-contract/lesson.md
+          - Exercise: modules/11-assure-the-contract/exercise.md
+          - Solution: modules/11-assure-the-contract/solution.md
+      - "12 - Publish research software":
+          - Overview: modules/12-publish-research-software/README.md
+          - Lesson: modules/12-publish-research-software/lesson.md
+          - Exercise: modules/12-publish-research-software/exercise.md
+          - Solution: modules/12-publish-research-software/solution.md
+      - "13 - Secure, promote and deploy":
+          - Overview: modules/13-secure-promote-deploy/README.md
+          - Lesson: modules/13-secure-promote-deploy/lesson.md
+          - Exercise: modules/13-secure-promote-deploy/exercise.md
+          - Solution: modules/13-secure-promote-deploy/solution.md
   - Supply chain: supply-chain.md
   - Deployment: deployment.md
   - Reference: reference.md
