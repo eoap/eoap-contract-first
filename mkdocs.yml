@@ -13,8 +13,8 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Home: index.md
-  - Learning path: learning-path.md
   - Prerequisites: prerequisites.md
+  - Learning path: learning-path.md
   - Architecture: architecture.md
   - Modules:
       - "00 - Understand Water Bodies": modules/00-waterbodies/README.md
