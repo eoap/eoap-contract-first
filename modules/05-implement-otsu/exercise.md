@@ -30,6 +30,6 @@ uv run pytest tests/tools/test_processing.py -k otsu
 
 Success means both cases pass. These tests do not inspect your manually generated mask; check its dtype, nodata and class counts in step 2. A failure identifies which invalid-pixel behavior differs from the contract.
 
-**Expected outcome:** otsu.tif is uint8, contains only 0/1 and marks nonfinite pixels as non-water.
+**Expected outcome:** `otsu.tif` is `uint8`, contains only 0/1 and marks nonfinite pixels as non-water.
 
 Compare [the solution](solution.md). Return to [the module](README.md).

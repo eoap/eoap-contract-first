@@ -41,6 +41,6 @@ uv run pytest tests/tools/test_processing.py -k "norm_diff or complete"
 
 Success means the selected tests pass. They use separate fixture outputs, so also inspect your own raster from step 2. If a test fails, use its name and assertion to determine whether the problem is input validation, grid compatibility or the calculated values.
 
-**Expected outcome:** norm_diff.tif contains float32 values -0.5 and +0.5 on the matching grid.
+**Expected outcome:** `norm_diff.tif` contains `float32` values `-0.5` and `+0.5` on the matching grid.
 
 Compare [the solution](solution.md). Return to [the module](README.md).
