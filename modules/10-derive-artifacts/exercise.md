@@ -1,6 +1,12 @@
 # Exercise — Derive artifacts
 
-Run task artifacts:derive. Compare reference/expected/inputs.yaml with the runnable reference/inputs.yaml: generated templates still require data locations. Inspect the OGC description and OCI $manifest wrapper.
+Run
+
+```console
+task artifacts:derive
+```
+
+Compare `reference/expected/inputs.yaml` with the runnable `reference/inputs.yaml`: generated templates still require data locations. Inspect the OGC description and OCI `$manifest` wrapper.
 
 From the repository root:
 

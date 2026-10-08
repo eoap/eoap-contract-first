@@ -1,6 +1,18 @@
 # Exercise — Secure, promote and deploy
 
-Run task oci:package and task oci:inspect with ORAS installed. With published container dependencies, generate real SBOMs and run the policy gate. Then follow docs/deployment.md to pull a promoted digest, deploy, discover, describe, inspect its package, execute, monitor and retrieve results. Record the artifact digest and successful job id.
+Run
+
+```console
+task oci:package
+```
+
+and
+
+```console
+task oci:inspect
+```
+
+With ORAS installed. With published container dependencies, generate real SBOMs and run the policy gate. Then follow `docs/deployment.md` to pull a promoted digest, deploy, discover, describe, inspect its package, execute, monitor and retrieve results. Record the artifact digest and successful job id.
 
 From the repository root:
 

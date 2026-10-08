@@ -1,6 +1,12 @@
 # Exercise — Publish research software
 
-Inspect s: metadata in the canonical CWL and the generated CodeMeta file. Run task artifacts:derive. Compare softwareVersion with CITATION.cff and explain which release fields require editorial synchronization.
+Inspect `s: metadata` in the canonical CWL and the generated CodeMeta file. Run
+
+```console
+task artifacts:derive
+```
+
+Compare `softwareVersion` with `CITATION.cff` and explain which release fields require editorial synchronization.
 
 From the repository root:
 
