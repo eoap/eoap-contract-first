@@ -665,21 +665,29 @@ wheels = [
 [[package]]
 name = "cwl-baseline-plugin"
 version = "0.1.1"
-source = { git = "https://github.com/transpiler-mate/cwl-baseline-plugin.git?rev=63d5c7697bbb6e66d5687f4ef88eb36ccc155e7e#63d5c7697bbb6e66d5687f4ef88eb36ccc155e7e" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "loguru" },
     { name = "semver" },
     { name = "transpiler-mate-api" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/e8/e0/d0e9cfd280fea1c7e4949dccbaa473c68377f4fa9d47d6c2e526b143402e/cwl_baseline_plugin-0.1.1.tar.gz", hash = "sha256:29ddad226d81adb680c8c1ae2121286ac2f1bf9601648eae2a5bbf2ac7a2ddb0", size = 34978, upload-time = "2026-09-27T20:51:08.363Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a1/b7/dcf4e07f3c686945a3e812f00676c0b1b275e6e54bc3b31ceb0d65099a96/cwl_baseline_plugin-0.1.1-py3-none-any.whl", hash = "sha256:35e156b22b7572e811d39c0136cc6258e703df58a49d1117bd54d9f69aefe6bd", size = 26406, upload-time = "2026-09-27T20:51:07.098Z" },
+]
 
 [[package]]
 name = "cwl-loader"
 version = "0.27.0"
-source = { git = "https://github.com/transpiler-mate/cwl-loader.git?rev=a51369615c16443b46bf7f63d1971d4acb389174#a51369615c16443b46bf7f63d1971d4acb389174" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cwl-upgrader" },
     { name = "cwl-utils" },
     { name = "loguru" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/47/c8/8a61b019a122d75e2bf2ef1f02bfe23d3601126eee505dece4938c144a96/cwl_loader-0.27.0.tar.gz", hash = "sha256:42661bdeb5b33eca0b929d23a0c52c4bacbc7b0c76d018d67f852950a570cffc", size = 108129, upload-time = "2026-09-26T09:59:46.666Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8b/ef/7280155ff9ebf33cf154e5b6e47d5e4e80666975fbabc408bd54525a9c1d/cwl_loader-0.27.0-py3-none-any.whl", hash = "sha256:083b6e98ff338913f6cb76227ccf790ee8804e5abde32574f33b7059dd065f8b", size = 18649, upload-time = "2026-09-26T09:59:45.105Z" },
 ]
 
 [[package]]
@@ -716,67 +724,91 @@ wheels = [
 [[package]]
 name = "cwl2click"
 version = "0.10.1"
-source = { git = "https://github.com/transpiler-mate/cwl2click.git?rev=43ddfd6a785c41ce9c62e28d52b7143aa654f5c3#43ddfd6a785c41ce9c62e28d52b7143aa654f5c3" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jinja2" },
     { name = "loguru" },
     { name = "transpiler-mate-api" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/53/6b/69199f4b8a521c9abf13e61bffca98b724b77096e4dac7ef0e23ec341070/cwl2click-0.10.1.tar.gz", hash = "sha256:5ab07245961137f8866761516bdd2762ab4b6fd095312255649495eb1f7a2c25", size = 24156, upload-time = "2026-09-27T17:55:43.609Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3d/7d/8c51dbb400e6926b740b2cc044a14b5166c893861a193e4ec37f5b2029cd/cwl2click-0.10.1-py3-none-any.whl", hash = "sha256:8e9e1d28e2f821feade913a8bd0f45ccc37ce82c0be90bc8e283b434a181883a", size = 12249, upload-time = "2026-09-27T17:55:42.398Z" },
+]
 
 [[package]]
 name = "cwl2codemeta"
 version = "0.1.1"
-source = { git = "https://github.com/transpiler-mate/cwl2codemeta.git?rev=49ff46d301d90e347861ed4d29bad838526abb57#49ff46d301d90e347861ed4d29bad838526abb57" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "giturlparse" },
     { name = "loguru" },
     { name = "pyld" },
     { name = "transpiler-mate-api" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/e7/4d/9b2a627d1fc6eb778bf20e0e7b6c32bd1b041468bc8d86432f1bd9adb7b9/cwl2codemeta-0.1.1.tar.gz", hash = "sha256:13bcd231b33dfcdbe9b921a911785e53cd8d0592c37df527e127abae3df2e624", size = 14355, upload-time = "2026-09-27T18:01:55.339Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/56/15/f83406d7754aa3653915e340360afa5cf7c17c63a41d57af3039a606434a/cwl2codemeta-0.1.1-py3-none-any.whl", hash = "sha256:5ae10500b0964c7f0b203ee22442a1caca0b543a141ca40088441e083562abf0", size = 10288, upload-time = "2026-09-27T18:01:54.199Z" },
+]
 
 [[package]]
 name = "cwl2inputs"
 version = "0.1.1"
-source = { git = "https://github.com/transpiler-mate/cwl2inputs.git?rev=f417674eb87374b39c9b7f4d5dd6cdfc8e098597#f417674eb87374b39c9b7f4d5dd6cdfc8e098597" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cwltool" },
     { name = "loguru" },
     { name = "pydantic" },
     { name = "transpiler-mate-api" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/aa/6e/cc7291a4b9016437f48e498a19af5dee4d13d2b6576e940602e71b467126/cwl2inputs-0.1.1.tar.gz", hash = "sha256:01781d05e04b642f417d62ec2b55b8d110762df8d8af1a4a717624bd6baf46d8", size = 14065, upload-time = "2026-09-28T10:38:20.922Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/40/65/3211637702ff091999461c702093fddfd8c332e1adb3ff40a400c2362f3d/cwl2inputs-0.1.1-py3-none-any.whl", hash = "sha256:e4970bd31c3b043da810af2e7fb99ffbe7945fa9c260331e7622973cfa516046", size = 10374, upload-time = "2026-09-28T10:38:19.558Z" },
+]
 
 [[package]]
 name = "cwl2markdown"
 version = "0.2.1"
-source = { git = "https://github.com/transpiler-mate/cwl2markdown.git?rev=17ea06d1eae4452a2e17c8b6c104dc5624122c44#17ea06d1eae4452a2e17c8b6c104dc5624122c44" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jinja2" },
     { name = "loguru" },
     { name = "transpiler-mate-api" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/e4/21/99da85d864e9ad748333f1981b345b321988b7b79cf75c200fec3c907c94/cwl2markdown-0.2.1.tar.gz", hash = "sha256:bf8c03d8dcfe477098ffe6f1fb6b95797eaba0daf8732d7874bc8e1f66d14793", size = 16852, upload-time = "2026-09-27T18:25:15.258Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8f/6e/53e02850ca21b85db08c6323e97925efe112e9dcad03f3e901784c61e887/cwl2markdown-0.2.1-py3-none-any.whl", hash = "sha256:ad7e84bd7b0760ff44acb7238a97f92e027468ae262dcd1a18eecc561d8e2b13", size = 13710, upload-time = "2026-09-27T18:25:13.909Z" },
+]
 
 [[package]]
 name = "cwl2oci"
 version = "0.1.1"
-source = { git = "https://github.com/transpiler-mate/cwl2oci.git?rev=ea662e629435e7d7f556674af071a905d605bf62#ea662e629435e7d7f556674af071a905d605bf62" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "loguru" },
     { name = "transpiler-mate-api" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/33/e1/794819a8481731920e0de172325af2866c0af583bef4e51872d729bf807a/cwl2oci-0.1.1.tar.gz", hash = "sha256:0f888f87560efb823e5c9be44120b6be75f558a72eb6c54e8032158a9259f323", size = 16275, upload-time = "2026-09-27T18:27:05.77Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2e/87/e4ee4af69bf47c835e240ec26497fec5ffd0ec63e9e73a55405ae1bf8a84/cwl2oci-0.1.1-py3-none-any.whl", hash = "sha256:4e9bab60a5c1927e57c85f921a67b400e430c43aa51c5556cc0a3637516ff363", size = 10712, upload-time = "2026-09-27T18:27:04.634Z" },
 ]
 
 [[package]]
 name = "cwl2ogc"
 version = "0.22.2"
-source = { git = "https://github.com/transpiler-mate/cwl2ogc.git?rev=2ae57d69f835e39d02ecaf851bc3da9ea7cb061f#2ae57d69f835e39d02ecaf851bc3da9ea7cb061f" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "loguru" },
     { name = "transpiler-mate-api" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e9/68/95289a7b61f012b06dd2a0cd6259a77c13ec4e2c1034ccf9a52014de1abf/cwl2ogc-0.22.2.tar.gz", hash = "sha256:d45ef06dfab8b9d95e7a020362f560ad784dbfb300793151350b088f49d3bd6c", size = 164277, upload-time = "2026-10-01T13:33:16.333Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/db/e6/2127e6be55aeb7e9ec518bbbb77a3e89deeb3092fdec4df44c4488c02c8d/cwl2ogc-0.22.2-py3-none-any.whl", hash = "sha256:455c2c8db92d0cd5a7974ecf7e383cc7009783fb85df2db5108c8a1695e2d81b", size = 14001, upload-time = "2026-10-01T13:33:15.16Z" },
 ]
 
 [[package]]
 name = "cwl2puml"
 version = "0.49.1"
-source = { git = "https://github.com/transpiler-mate/cwl2puml.git?rev=3bc0efd5efdc450e58a3a60c9e5451a6dafe187f#3bc0efd5efdc450e58a3a60c9e5451a6dafe187f" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cwl2ogc" },
     { name = "jinja2" },
@@ -786,15 +818,23 @@ dependencies = [
     { name = "six" },
     { name = "transpiler-mate-api" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/90/9a/5d109e61d1a1470a476f8d35c0d340bb583cbb6efc566b2f40793dcdb6d3/cwl2puml-0.49.1.tar.gz", hash = "sha256:4e4dac851887b661a3a27f32396df1260fe298672fcfe29bf960649d66840349", size = 291672, upload-time = "2026-09-27T20:39:55.453Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f0/3a/ede35697c7731f10a4e1de41d0a9cd7e50f78815e1cb9712e165f7e40cf0/cwl2puml-0.49.1-py3-none-any.whl", hash = "sha256:4b101df97ae412e08165c18dd9bc72f2c18461f5640aafea7556ea5202634efd", size = 17582, upload-time = "2026-09-27T20:39:54.071Z" },
+]
 
 [[package]]
 name = "cwl2sbom"
 version = "0.1.1"
-source = { git = "https://github.com/transpiler-mate/cwl2sbom.git?rev=fc707a129947508eebd1b26c46e4bee63c06a4bd#fc707a129947508eebd1b26c46e4bee63c06a4bd" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "loguru" },
     { name = "pydantic" },
     { name = "transpiler-mate-api" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4c/fe/a4d23f0aa48b212f15bb221584f921b5a88665a11681a9bd1ac6c078fd5c/cwl2sbom-0.1.1.tar.gz", hash = "sha256:b800027c544421ee566ab48f17f55c46d7d92a834916fdf00259500cfdc4bb1c", size = 22173, upload-time = "2026-09-28T10:04:13.182Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/22/7c/9825703a086bf45b5bffdc14643e1c4a78b0e2f01dadefce84dea224a059/cwl2sbom-0.1.1-py3-none-any.whl", hash = "sha256:4e085897d75563dc7f436b4f596f5bfcc3da6a0edebddbb9ae39fd9f25ce1426", size = 15680, upload-time = "2026-09-28T10:04:11.998Z" },
 ]
 
 [[package]]
@@ -3445,17 +3485,21 @@ wheels = [
 [[package]]
 name = "transpiler-mate-api"
 version = "1.0.1"
-source = { git = "https://github.com/transpiler-mate/transpiler-mate-api.git?rev=850c966e4a0d9b18a94d28508fc63c189b55280c#850c966e4a0d9b18a94d28508fc63c189b55280c" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cwl-utils" },
     { name = "email-validator" },
     { name = "pydantic" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/7d/02/5068b7a4f1d2d5794f3839da05ab863c104f7afc63efd374b9d992fa60fa/transpiler_mate_api-1.0.1.tar.gz", hash = "sha256:257e0ce2e34660146c4807c4714adb7c46552dc902342e30e3a4150c757227b9", size = 27279, upload-time = "2026-09-27T14:07:52.936Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6e/bf/42ec88d881d2307217c4eb685e0cf37e34ed603c38b21c830b905188087c/transpiler_mate_api-1.0.1-py3-none-any.whl", hash = "sha256:9f222c09fe8e36d81c3c7870ecd5398bf2dcbcea77a92be2ffbef1344d5163b1", size = 13553, upload-time = "2026-09-27T14:07:51.635Z" },
+]
 
 [[package]]
 name = "transpiler-mate-runtime"
 version = "1.3.0"
-source = { git = "https://github.com/transpiler-mate/transpiler-mate-runtime.git?rev=c55100e21d9e009f5ac67147794225547666f7cd#c55100e21d9e009f5ac67147794225547666f7cd" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
     { name = "cwl-loader" },
@@ -3464,6 +3508,10 @@ dependencies = [
     { name = "pyld" },
     { name = "session-adapters" },
     { name = "transpiler-mate-api" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/15/80/16965f7aa2d6cc6c650fac0e3e5f4741085689bbf0796c7d2d3133d63aad/transpiler_mate_runtime-1.3.0.tar.gz", hash = "sha256:c1242b2dbc0cd182c764bd075cbb4c5f283d39fec9656ab86f3000a9e96cb02c", size = 35499, upload-time = "2026-09-28T22:54:07.204Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/78/aa/c0d00381646df4279908c54fd9ac1035a2117220ba86aaae1cb3dbbcfffb/transpiler_mate_runtime-1.3.0-py3-none-any.whl", hash = "sha256:06acb2f7ef8c80e797498011c57aef2a669b0ed454aff5faf66fe29d06962b4d", size = 22505, upload-time = "2026-09-28T22:54:05.974Z" },
 ]
 
 [[package]]
@@ -3617,16 +3665,16 @@ tooling = [
 [package.metadata]
 requires-dist = [
     { name = "bandit", marker = "extra == 'dev'", specifier = ">=1.9,<2" },
-    { name = "cwl-baseline-plugin", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl-baseline-plugin.git?rev=63d5c7697bbb6e66d5687f4ef88eb36ccc155e7e" },
-    { name = "cwl-loader", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl-loader.git?rev=a51369615c16443b46bf7f63d1971d4acb389174" },
-    { name = "cwl2click", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl2click.git?rev=43ddfd6a785c41ce9c62e28d52b7143aa654f5c3" },
-    { name = "cwl2codemeta", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl2codemeta.git?rev=49ff46d301d90e347861ed4d29bad838526abb57" },
-    { name = "cwl2inputs", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl2inputs.git?rev=f417674eb87374b39c9b7f4d5dd6cdfc8e098597" },
-    { name = "cwl2markdown", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl2markdown.git?rev=17ea06d1eae4452a2e17c8b6c104dc5624122c44" },
-    { name = "cwl2oci", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl2oci.git?rev=ea662e629435e7d7f556674af071a905d605bf62" },
-    { name = "cwl2ogc", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl2ogc.git?rev=2ae57d69f835e39d02ecaf851bc3da9ea7cb061f" },
-    { name = "cwl2puml", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl2puml.git?rev=3bc0efd5efdc450e58a3a60c9e5451a6dafe187f" },
-    { name = "cwl2sbom", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/cwl2sbom.git?rev=fc707a129947508eebd1b26c46e4bee63c06a4bd" },
+    { name = "cwl-baseline-plugin", marker = "extra == 'tooling'", specifier = "==0.1.1" },
+    { name = "cwl-loader", marker = "extra == 'tooling'", specifier = "==0.27.0" },
+    { name = "cwl2click", marker = "extra == 'tooling'", specifier = "==0.10.1" },
+    { name = "cwl2codemeta", marker = "extra == 'tooling'", specifier = "==0.1.1" },
+    { name = "cwl2inputs", marker = "extra == 'tooling'", specifier = "==0.1.1" },
+    { name = "cwl2markdown", marker = "extra == 'tooling'", specifier = "==0.2.1" },
+    { name = "cwl2oci", marker = "extra == 'tooling'", specifier = "==0.1.1" },
+    { name = "cwl2ogc", marker = "extra == 'tooling'", specifier = "==0.22.2" },
+    { name = "cwl2puml", marker = "extra == 'tooling'", specifier = "==0.49.1" },
+    { name = "cwl2sbom", marker = "extra == 'tooling'", specifier = "==0.1.1" },
     { name = "cwltool", marker = "extra == 'tooling'", specifier = ">=3.1" },
     { name = "jupyterlab", marker = "extra == 'notebook'", specifier = ">=4,<5" },
     { name = "matplotlib", marker = "extra == 'notebook'", specifier = ">=3.9,<4" },
@@ -3639,8 +3687,8 @@ requires-dist = [
     { name = "pytest-cov", marker = "extra == 'test'", specifier = ">=6.2,<8" },
     { name = "pyyaml", marker = "extra == 'tooling'", specifier = ">=6,<7" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.16,<0.17" },
-    { name = "transpiler-mate-api", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/transpiler-mate-api.git?rev=850c966e4a0d9b18a94d28508fc63c189b55280c" },
-    { name = "transpiler-mate-runtime", marker = "extra == 'tooling'", git = "https://github.com/transpiler-mate/transpiler-mate-runtime.git?rev=c55100e21d9e009f5ac67147794225547666f7cd" },
+    { name = "transpiler-mate-api", marker = "extra == 'tooling'", specifier = "==1.0.1" },
+    { name = "transpiler-mate-runtime", marker = "extra == 'tooling'", specifier = "==1.3.0" },
     { name = "types-pyyaml", marker = "extra == 'dev'" },
     { name = "waterbodies", editable = "reference" },
 ]
