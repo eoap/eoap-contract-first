@@ -1,0 +1,3622 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eoap.github.io/waterbodies-learning/modules/13-secure-promote-deploy/lesson/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../exercise/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lesson - Water Bodies learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#secure-promote-and-deploy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Water Bodies learning" class="md-header__button md-logo" aria-label="Water Bodies learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Water Bodies learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lesson
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eoap/waterbodies-learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Water Bodies learning" class="md-nav__button md-logo" aria-label="Water Bodies learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Water Bodies learning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eoap/waterbodies-learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../learning-path/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning path
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 - Understand Water Bodies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    00 - Understand Water Bodies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-waterbodies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-waterbodies/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-waterbodies/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-waterbodies/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Design the contract
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    01 - Design the contract
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-design-the-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-design-the-contract/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-design-the-contract/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-design-the-contract/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 - Derive the CLI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    02 - Derive the CLI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-derive-the-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-derive-the-cli/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-derive-the-cli/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-derive-the-cli/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Implement crop
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    03 - Implement crop
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-implement-crop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-implement-crop/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-implement-crop/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-implement-crop/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Implement normalized difference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    04 - Implement normalized difference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-implement-norm-diff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-implement-norm-diff/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-implement-norm-diff/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-implement-norm-diff/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - Implement Otsu
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    05 - Implement Otsu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-implement-otsu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-implement-otsu/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-implement-otsu/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-implement-otsu/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Implement STAC
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    06 - Implement STAC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-implement-stac/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-implement-stac/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-implement-stac/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-implement-stac/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 - Compose the workflow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    07 - Compose the workflow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-compose-the-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-compose-the-workflow/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-compose-the-workflow/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-compose-the-workflow/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Containerize
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    08 - Containerize
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-containerize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-containerize/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-containerize/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-containerize/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_10" id="__nav_5_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 - Run the application
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    09 - Run the application
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-run-the-application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-run-the-application/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-run-the-application/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-run-the-application/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_11" id="__nav_5_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Derive artifacts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    10 - Derive artifacts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-derive-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-derive-artifacts/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-derive-artifacts/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-derive-artifacts/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 - Evolve and assure the contract
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    11 - Evolve and assure the contract
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-assure-the-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-assure-the-contract/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-assure-the-contract/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-assure-the-contract/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_13" id="__nav_5_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Publish research software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    12 - Publish research software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-publish-research-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-publish-research-software/lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-publish-research-software/exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-publish-research-software/solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_14" id="__nav_5_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Secure, promote and deploy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    13 - Secure, promote and deploy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-objects-being-released" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand the objects being released
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#follow-the-release-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow the release sequence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-the-tools-and-choose-an-exercise-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prepare the tools and choose an exercise scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-prepare-the-candidate-and-its-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prepare the candidate and its images
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-generate-a-software-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Generate a software inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Generate a software inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practice-with-a-temporary-local-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice with a temporary local registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-check-coverage-identity-and-file-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Check coverage, identity and file integrity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-apply-the-vulnerability-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Apply the vulnerability policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pin-the-inspected-images-and-package-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Pin the inspected images and package the application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-associate-evidence-and-promote-the-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Associate evidence and promote the candidate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Associate evidence and promote the candidate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-signatures-and-provenance-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where signatures and provenance fit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-retrieve-and-deploy-the-promoted-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Retrieve and deploy the promoted application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-stage-inputs-start-a-job-and-validate-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Stage inputs, start a job and validate the result
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-what-succeeded-and-diagnose-what-did-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Record what succeeded and diagnose what did not
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../supply-chain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supply chain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-objects-being-released" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand the objects being released
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#follow-the-release-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow the release sequence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-the-tools-and-choose-an-exercise-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prepare the tools and choose an exercise scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-prepare-the-candidate-and-its-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prepare the candidate and its images
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-generate-a-software-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Generate a software inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Generate a software inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practice-with-a-temporary-local-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice with a temporary local registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-check-coverage-identity-and-file-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Check coverage, identity and file integrity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-apply-the-vulnerability-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Apply the vulnerability policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pin-the-inspected-images-and-package-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Pin the inspected images and package the application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-associate-evidence-and-promote-the-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Associate evidence and promote the candidate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Associate evidence and promote the candidate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-signatures-and-provenance-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where signatures and provenance fit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-retrieve-and-deploy-the-promoted-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Retrieve and deploy the promoted application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-stage-inputs-start-a-job-and-validate-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Stage inputs, start a job and validate the result
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-what-succeeded-and-diagnose-what-did-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Record what succeeded and diagnose what did not
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contract-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="secure-promote-and-deploy">Secure, promote and deploy</h1>
+<p>The earlier modules gave us a tested workflow, container images, generated metadata and a reviewed version change. This final module connects them into a release that another environment can retrieve and run.</p>
+<p>Three activities are involved:</p>
+<ul>
+<li><strong>Secure the release process:</strong> collect evidence about the software dependencies, check its integrity and apply a defined vulnerability policy.</li>
+<li><strong>Promote a release:</strong> identify a specific candidate as the accepted release after the required checks and review.</li>
+<li><strong>Deploy and execute:</strong> install the selected application in a processing service, supply inputs and verify the results of a job.</li>
+</ul>
+<p>The CWL contract connects these activities. It identifies the processing tools and container dependencies to inspect, becomes the application artifact we distribute, and tells the execution backend how the workflow runs. The contract enables these checks; it does not perform them by itself.</p>
+<h2 id="understand-the-objects-being-released">Understand the objects being released</h2>
+<p>We distribute both the processing environments and the workflow that uses them:</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>What it contains or describes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Four container images</strong></td>
+<td>The executable environments for crop, normalized difference, Otsu and STAC packaging.</td>
+</tr>
+<tr>
+<td><strong>Release CWL</strong></td>
+<td>The workflow and tool contracts, with the release version and selected container identities.</td>
+</tr>
+<tr>
+<td><strong>Application artifact</strong></td>
+<td>The CWL packaged for storage and retrieval through an OCI registry, with generated annotations. It references the images through CWL rather than embedding all four images.</td>
+</tr>
+<tr>
+<td><strong>Evidence</strong></td>
+<td>Inventories, image identities, coverage information and compatibility findings associated with the release.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>OCI</strong> means Open Container Initiative. Its distribution formats support artifacts beyond executable images. <strong>ORAS</strong> is the command-line tool used here to package, transfer and associate those artifacts. An OCI <strong>manifest</strong> describes an artifact's content and metadata; an <strong>OCI layout</strong> stores it locally on disk. See the <a href="https://oras.land/docs/concepts/artifact/">ORAS artifact guide</a>.</p>
+<p>A <strong>tag</strong>, such as <code>1.0.0</code>, is a readable release name. A <strong>digest</strong>, such as a full <code>sha256</code> hash, identifies particular content. Registries may allow tags to move, so release checks and deployment should track the accepted digests.</p>
+<h2 id="follow-the-release-sequence">Follow the release sequence</h2>
+<pre class="mermaid"><code>flowchart TD
+  C[Tested CWL and implementations] --&gt; B[Review compatibility and release version]
+  B --&gt; I[Build and publish versioned container images]
+  I --&gt; S[Generate SBOMs and record image identities]
+  S --&gt; V[Check coverage and evidence integrity]
+  V --&gt; G[Apply vulnerability policy]
+  G --&gt; P[Pin image digests in release CWL]
+  P --&gt; A[Generate annotations and package application]
+  A --&gt; E[Upload candidate and attach evidence]
+  E --&gt; R[Promote the accepted application digest]
+  R --&gt; D[Pull and deploy to ZOO]
+  D --&gt; J[Execute a job and validate its results]</code></pre>
+<p>Each stage supplies information needed by the next. For example, the release cannot pin inspected registry digests until the images are available for inspection. Publishing those container dependencies is an intermediate step: it does not mean the final application has passed promotion.</p>
+<h2 id="prepare-the-tools-and-choose-an-exercise-scope">Prepare the tools and choose an exercise scope</h2>
+<p>Use the repository setup and tests from earlier modules. Container work requires Docker. Packaging uses the <strong>ORAS CLI</strong>, and image inventory and vulnerability assessment use <strong>Trivy</strong>. The reference workflow selects ORAS 1.3.1 and Trivy 0.75.0; see <a href="../../../prerequisites/">Prerequisites</a> for the setup context.</p>
+<p>There are three useful scopes:</p>
+<table>
+<thead>
+<tr>
+<th>Scope</th>
+<th>What you need</th>
+<th>What you can establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Local packaging</strong></td>
+<td>Installed application tooling and ORAS.</td>
+<td>The CWL and annotations can be packaged, inspected and retrieved from a local layout.</td>
+</tr>
+<tr>
+<td><strong>Image inventory and policy</strong></td>
+<td>Built images, Docker, Trivy and an accessible registry; database access for vulnerability scanning.</td>
+<td>The declared images can be inventoried and assessed against the selected policy.</td>
+</tr>
+<tr>
+<td><strong>Publication and remote execution</strong></td>
+<td>Registry publication permissions, release review, a configured ZOO service and backend-accessible input storage.</td>
+<td>A promoted application can be deployed and executed in that environment.</td>
+</tr>
+</tbody>
+</table>
+<p>Completing the first scope does not establish the results of the others. Work from the repository root in the examples below. The full command sequences are also maintained in <a href="../../../supply-chain/">Supply-chain assurance</a> and <a href="../../../deployment/">Deployment</a>.</p>
+<h2 id="1-prepare-the-candidate-and-its-images">1. Prepare the candidate and its images</h2>
+<p>Begin with the checked application and a reviewed release version:</p>
+<div class="highlight"><pre><span></span><code><span class="go">task reference:test</span>
+<span class="go">task release:prepare VERSION=1.0.0</span>
+<span class="go">task containers:build VERSION=1.0.0</span>
+</code></pre></div>
+<p>Release preparation writes <code>build/release/waterbodies.cwl</code>. It sets the application version and versioned container references without editing the canonical source contract in place. Building creates the corresponding local images.</p>
+<p>Before a real release, apply the compatibility assessment from <a href="../../11-assure-the-contract/lesson/">Baselining</a> against the previous promoted contract. Keep the Python package version, release CWL and packaging metadata coherent; setting an image tag alone does not change the package version.</p>
+<p>The inventory plugin used here inspects images through a registry. A successful local Docker build is therefore insufficient for remote inventory. The protected release workflow publishes the versioned images before scanning them. For practice without a public push, use the repository's local integration exercise described below.</p>
+<h2 id="2-generate-a-software-inventory">2. Generate a software inventory</h2>
+<p>An <strong>SBOM</strong>, or software bill of materials, is an inventory of software components. <strong>CycloneDX</strong> is the format used for these inventories. An inventory helps answer “what software was observed?”; a vulnerability assessment asks a separate question about known weaknesses in that software.</p>
+<p>The <strong>cwl2sbom Transpiler-Mate plugin</strong> follows the selected workflow's reachable tools and inspects their declared containers with Trivy. It records which images and platform were examined. Here, <code>linux/amd64</code> identifies Linux on the AMD64/x86-64 architecture; do not assume inspection of one platform establishes results for another.</p>
+<p>When the release images are available in an accessible registry, generate a new bundle:</p>
+<div class="highlight"><pre><span></span><code><span class="go">task sbom:generate CONTRACT=build/release/waterbodies.cwl PLATFORM=linux/amd64 SBOM=build/sbom</span>
+</code></pre></div>
+<p>The output directory must not already exist. For another run, choose a new <code>SBOM</code> path and use that same path in subsequent checks. Keep earlier bundles when they are evidence for earlier candidates.</p>
+<p>The bundle contains several complementary files:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workflow.cdx.json</code></td>
+<td>Records the workflow, tools and their image relationships.</td>
+</tr>
+<tr>
+<td><code>images/*.cdx.json</code></td>
+<td>Records software inventoried inside each inspected image.</td>
+</tr>
+<tr>
+<td><code>images.lock.json</code></td>
+<td>Connects image references to repository digests, platform, inventory files and checksums.</td>
+</tr>
+<tr>
+<td><code>coverage.json</code></td>
+<td>Reports which reachable tools were covered and the inspection limitations.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Complete declared-tool coverage</strong> means the workflow's declared container dependencies were covered. It does not mean every possible runtime dependency was discovered. Software downloaded during execution or supplied by the host is outside this inventory's scope. The workflow SBOM therefore intentionally reports incomplete aggregate composition even when all four declared tools are covered.</p>
+<h3 id="practice-with-a-temporary-local-registry">Practice with a temporary local registry</h3>
+<p>After building the 1.0.0 images, run:</p>
+<div class="highlight"><pre><span></span><code><span class="go">task supply-chain:integration</span>
+</code></pre></div>
+<p>This starts a temporary registry bound to localhost, uploads the four locally built images there, writes a temporary contract with those registry references, generates <code>build/sbom-local</code> and checks the bundle. The registry is removed afterward. This exercise does not publish to GHCR or run the vulnerability-policy script.</p>
+<p>The checked-in bundle under <code>reference/expected/sbom/local-example</code> is historical teaching evidence. Its temporary registry addresses are not a promoted release or a current source of images. Generate fresh evidence for the candidate being assessed.</p>
+<h2 id="3-check-coverage-identity-and-file-integrity">3. Check coverage, identity and file integrity</h2>
+<p>Before interpreting inventory content, check that it belongs to the intended contract and has not changed relative to its recorded checksums:</p>
+<div class="highlight"><pre><span></span><code><span class="go">task sbom:check CONTRACT=build/release/waterbodies.cwl SBOM=build/sbom</span>
+</code></pre></div>
+<p>The checker verifies coverage of the four declared containers, correspondence between contract references and inspected identities, consistent platform information, and the checksums of image SBOM files.</p>
+<p>A <strong>checksum</strong> is a hash computed from file bytes. Recomputing it detects a mismatch with the recorded value. This is an integrity check, not proof that the person supplying both the file and checksum is trusted.</p>
+<p>Do not confuse this with <code>task supply-chain:check</code>. That task checks the contract's image-reference conventions and runs supply-chain tests. It does not itself generate or validate a fresh release SBOM bundle and does not scan the release for vulnerabilities.</p>
+<h2 id="4-apply-the-vulnerability-policy">4. Apply the vulnerability policy</h2>
+<p>Trivy can assess an SBOM against its vulnerability information. The repository applies a specific educational policy through:</p>
+<div class="highlight"><pre><span></span><code><span class="go">bash supply-chain/policy/scan.sh build/sbom</span>
+</code></pre></div>
+<p>For the local integration bundle, pass <code>build/sbom-local</code> instead. The script scans the image SBOMs and exits with failure if it finds a vulnerability rated <strong>HIGH</strong> or <strong>CRITICAL</strong>, including findings without a published fix. A nonzero exit status is how the pipeline knows it must stop. Trivy's <a href="https://trivy.dev/docs/latest/target/sbom/">SBOM scanning documentation</a> describes the underlying operation.</p>
+<p>The policy does not claim to assess licenses or reject every lower-severity finding. Database availability and freshness matter: a previously passing image may receive new findings later. A passing result means this assessment found no policy-blocking vulnerabilities, not that the software is proven secure.</p>
+<p>When the gate fails, investigate the affected dependencies or base image, rebuild as appropriate and generate new evidence. If an organization permits exceptions, they need a separately reviewed policy decision with rationale and expiry; this script provides no automatic exception mechanism.</p>
+<h2 id="5-pin-the-inspected-images-and-package-the-application">5. Pin the inspected images and package the application</h2>
+<p>After the registry inspection and policy checks, write the recorded image digests into the release CWL:</p>
+<div class="highlight"><pre><span></span><code><span class="go">uv run python scripts/supply_chain.py prepare --version 1.0.0 --lock build/sbom/images.lock.json</span>
+<span class="go">uv run cwltool --validate 'build/release/waterbodies.cwl#waterbodies'</span>
+<span class="go">task sbom:check CONTRACT=build/release/waterbodies.cwl SBOM=build/sbom</span>
+</code></pre></div>
+<p>This sequence expects evidence for the canonical release image references, not the temporary localhost exercise. The second bundle check ensures the digest references in the rewritten contract match the inspected images. The release now points to specific environments rather than whichever content the version tags may later name.</p>
+<p>Generate annotations and package that release contract locally:</p>
+<div class="highlight"><pre><span></span><code><span class="go">task oci:package VERSION=1.0.0 CONTRACT=build/release/waterbodies.cwl</span>
+<span class="go">task oci:inspect VERSION=1.0.0</span>
+<span class="go">oras pull --oci-layout build/oci:1.0.0 -o build/restored</span>
+</code></pre></div>
+<p>The <strong>cwl2oci plugin</strong> generates descriptive annotations under a <code>$manifest</code> wrapper. ORAS applies them while packaging <code>waterbodies.cwl</code> with the <code>application/cwl</code> artifact type. The local layout is stored under <code>build/oci</code>; the pull command retrieves its CWL into <code>build/restored</code>.</p>
+<p>The packaging script checks that the requested package version, CWL version and annotation version agree. It uses a fixed teaching-example creation timestamp to avoid changing the manifest digest merely because packaging was rerun. Review that timestamp policy when preparing an actual release.</p>
+<p>For a packaging-only exercise, <code>task oci:package</code> without the release-contract override packages the canonical contract. That demonstrates the mechanics, but does not establish that the referenced containers passed fresh release gates. Despite ORAS's use of the word <code>push</code> internally, <code>--oci-layout</code> writes locally; these commands perform no registry publication.</p>
+<h2 id="6-associate-evidence-and-promote-the-candidate">6. Associate evidence and promote the candidate</h2>
+<p><strong>Promotion</strong> designates an accepted artifact for release. It should refer to the artifact already checked, rather than rebuild different content after the checks.</p>
+<p>In this repository, <code>supply-chain/oras/publish.sh</code> performs these operations after the preceding release gates:</p>
+<ol>
+<li>Upload the local application layout under a candidate tag, such as <code>1.0.0-candidate</code>, and resolve its digest.</li>
+<li>Attach the workflow CycloneDX inventory to that application digest.</li>
+<li>Attach each image's CycloneDX inventory to its corresponding container digest.</li>
+<li>Attach the lock, coverage and baseline reports to the application digest.</li>
+<li>Apply the final version tag to the same application digest and check that it resolves correctly.</li>
+</ol>
+<p>An attached artifact is also called a <strong>referrer</strong>: it refers to another artifact as its subject. These associations let a consumer find evidence for a particular release. Check discovery and retrieve the evidence; the existence of an attachment alone is not evidence that its contents passed your policy.</p>
+<p>The release workflow in <code>.github/workflows/release.yaml</code> is manually started with the version, previous promoted contract and reviewed compatibility classification. Its verification job runs first. Only the publication job receives <code>packages:write</code> permission and uses the GitHub environment named <code>release</code>.</p>
+<p>Configure required reviewers on that environment to enforce the intended approval boundary. Merely naming an environment in YAML does not configure required reviewers. GitHub documents these controls in <a href="https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments">Managing environments</a>.</p>
+<p>The manual <code>task release:publish</code> also requires an explicit approval flag and existing prepared artifacts. It does not build the image dependencies or perform the entire release workflow for you. Prefer the documented protected pipeline for an actual release; generating an SBOM does not authorize publication.</p>
+<h3 id="where-signatures-and-provenance-fit">Where signatures and provenance fit</h3>
+<p>A <strong>signature</strong> can bind an artifact to a signing identity that a consumer verifies under a chosen trust policy. <strong>Build provenance</strong> records information about how an artifact was produced, such as its build inputs and process. These answer different questions from inventory or vulnerability scanning.</p>
+<p>Signing and provenance are optional extensions in this course, not outputs that the current scripts fabricate. A team adding them must define which identities and assertions it accepts and verify the exact artifact subjects. An attached signature without that verification does not establish release trust.</p>
+<h2 id="7-retrieve-and-deploy-the-promoted-application">7. Retrieve and deploy the promoted application</h2>
+<p><strong>Deployment</strong> installs the application into a service so it can accept execution requests. <strong>Execution</strong> starts a particular job with input values. They are separate operations.</p>
+<p>Here, ZOO supplies an OGC API – Processes service and an execution backend. The server, backend, registry access, authentication and staging storage must be configured first. Follow <a href="../../../deployment/">the deployment guide</a> for the environment-specific details.</p>
+<p>Retrieve the accepted application by its real digest:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">EOAP_REF</span><span class="o">=</span><span class="s1">'ghcr.io/eoap/waterbodies@sha256:REPLACE_WITH_PROMOTED_DIGEST'</span>
+oras<span class="w"> </span>discover<span class="w"> </span><span class="s2">"</span><span class="nv">$EOAP_REF</span><span class="s2">"</span>
+oras<span class="w"> </span>pull<span class="w"> </span><span class="s2">"</span><span class="nv">$EOAP_REF</span><span class="s2">"</span><span class="w"> </span>-o<span class="w"> </span>build/promoted
+</code></pre></div>
+<p>Replace the placeholder with the complete inspected digest. Verify the associated evidence and selected content before installation. The documented integration does not assume ZOO accepts an OCI reference directly; it submits the pulled CWL bytes:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">API</span><span class="o">=</span><span class="s1">'http://localhost:8080/ogc-api'</span>
+curl<span class="w"> </span>--fail-with-body<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"</span><span class="nv">$API</span><span class="s2">/processes?w=waterbodies"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'Accept: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/cwl+yaml'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-binary<span class="w"> </span>@build/promoted/waterbodies.cwl
+</code></pre></div>
+<p><code>API</code> is the service base URL; replace it for your installation. <code>--data-binary</code> sends the file contents, while the content-type header tells the server they are CWL YAML. The <code>w</code> selector follows this ZOO deployment route. Supply authentication through the configured client or environment rather than committing credentials.</p>
+<p>Discover the installed process and inspect its description and package:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--fail-with-body<span class="w"> </span><span class="s2">"</span><span class="nv">$API</span><span class="s2">/processes"</span>
+curl<span class="w"> </span>--fail-with-body<span class="w"> </span><span class="s2">"</span><span class="nv">$API</span><span class="s2">/processes/waterbodies"</span>
+curl<span class="w"> </span>--fail-with-body<span class="w"> </span><span class="s2">"</span><span class="nv">$API</span><span class="s2">/processes/waterbodies/package"</span>
+</code></pre></div>
+<p>Use the identifier and links actually returned if the server assigns a different process ID. Compare the installed tool definitions and image digests with the promoted CWL. The cwl2ogc description from an earlier lesson helps describe an interface; generating it did not install this service.</p>
+<h2 id="8-stage-inputs-start-a-job-and-validate-the-result">8. Stage inputs, start a job and validate the result</h2>
+<p>A remote server cannot automatically read a path on your laptop. The workflow's <code>item</code> input requires a staged STAC <strong>Directory</strong> containing <code>catalog.json</code>, linked Item metadata and the band assets. A URL pointing only to an Item JSON is not the same input.</p>
+<p>Transfer or prepare the complete source directory using your backend's staging mechanism, preserve its relative links and confirm backend access. Inspect the deployed input schema and staging conventions. There is no universal upload endpoint assumed here.</p>
+<p><code>supply-chain/examples/execute.json</code> illustrates a request, but its Directory location is a placeholder. Prepare <code>build/execute.json</code> with a representation supported by your backend and an accessible location. Keep the exercise's AOI and band values if you transferred the synthetic fixture.</p>
+<p>Submit the request:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--fail-with-body<span class="w"> </span>-D<span class="w"> </span>build/job.headers<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"</span><span class="nv">$API</span><span class="s2">/processes/waterbodies/execution"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">'Prefer: respond-async'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data-binary<span class="w"> </span>@build/execute.json
+</code></pre></div>
+<p>An <strong>asynchronous</strong> request lets the service return a job reference while processing continues. <code>-D</code> saves response headers, which may contain the status location. Acceptance of a request is not successful completion: capture the returned job identifier and follow its status link.</p>
+<p>For the documented ZOO routes:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">JOB_ID</span><span class="o">=</span><span class="s1">'REPLACE_WITH_RETURNED_JOB_ID'</span>
+curl<span class="w"> </span>--fail-with-body<span class="w"> </span><span class="s2">"</span><span class="nv">$API</span><span class="s2">/jobs/</span><span class="nv">$JOB_ID</span><span class="s2">"</span>
+curl<span class="w"> </span>--fail-with-body<span class="w"> </span><span class="s2">"</span><span class="nv">$API</span><span class="s2">/jobs/</span><span class="nv">$JOB_ID</span><span class="s2">/results"</span>
+</code></pre></div>
+<p>Wait for a successful terminal status before retrieving results. If the job fails, inspect backend diagnostics, input access and container availability. Retrieve the returned result catalog and assets, parse them through PySTAC and validate the Item and declared extensions. For the synthetic fixture, confirm the 6×6 mask and 18 water pixels as in <a href="../../09-run-the-application/lesson/">Run the application</a>.</p>
+<h2 id="record-what-succeeded-and-diagnose-what-did-not">Record what succeeded and diagnose what did not</h2>
+<p>Keep the promoted application digest, deployed process identifier, returned package identity, successful job identifier and validated result together. That connects the release decision to an observable execution. This repository does not contain a fabricated live deployment result; a real result requires the configured external environment.</p>
+<table>
+<thead>
+<tr>
+<th>Observation</th>
+<th>What to investigate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inventory cannot find an image</td>
+<td>Whether it was uploaded to the intended registry, credentials and platform selection.</td>
+</tr>
+<tr>
+<td>Coverage or checksum check fails</td>
+<td>Whether the bundle matches this contract and whether its files changed.</td>
+</tr>
+<tr>
+<td>Vulnerability policy fails</td>
+<td>The reported packages, base image and available fixes; regenerate evidence after changes.</td>
+</tr>
+<tr>
+<td>Metadata versions disagree</td>
+<td>The candidate CWL, generated annotations and intended package version.</td>
+</tr>
+<tr>
+<td>Deployment succeeds but execution fails</td>
+<td>Backend staging, image access, runtime configuration and job diagnostics.</td>
+</tr>
+<tr>
+<td>A job succeeds but results differ</td>
+<td>The submitted inputs, deployed contract, actual image identities and scientific outputs.</td>
+</tr>
+</tbody>
+</table>
+<p>Each gate establishes a limited fact. Inventory, integrity, vulnerability policy, review, publication and execution are all needed to understand the complete result.</p>
+<h2 id="contract-questions">Contract questions</h2>
+<p><strong>What are we designing?</strong> A release path from tested CWL and container dependencies to an accepted immutable application artifact and a verified remote execution.</p>
+<p><strong>Why does it belong in the contract?</strong> The declared workflow and container references connect the application interface to the software inspected, packaged and deployed.</p>
+<p><strong>What can be derived?</strong> Inventories, inspected image identities, coverage evidence, OCI annotations and a release CWL pinned to the inspected containers. Policy decisions, approval and live execution require additional steps.</p>
+<p><strong>How do we verify it?</strong> Complete <a href="../exercise/">the exercise</a> at the available scope: inspect local packaging, check fresh inventory and policy evidence, then deploy a promoted digest to a configured service and validate its actual results.</p>
+<p><a href="../">Module overview</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
