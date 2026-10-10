@@ -94,7 +94,7 @@ tasks:
       - bash supply-chain/oras/publish.sh '{{.VERSION}}'
   docs:serve:
     cmds:
-      - uv run mkdocs serve
+      - uv run mkdocs serve --dev-addr 127.0.0.1:8089
   docs:build:
     cmds:
       - uv run mkdocs build --strict

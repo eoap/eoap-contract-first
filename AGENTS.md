@@ -1298,3 +1298,13 @@ Do not substitute the upstream PyPI package or another fork for this dependency.
 Validate newly created or modified Items using PySTAC's validation API, including their declared extension schemas, before considering STAC-producing changes complete. Cover the relevant mappings and validation behavior in tests. Do not bypass validation or remove extension declarations merely to make checks pass.
 
 The schema-first rules above still apply to upstream API models. Convert those generated models into PySTAC objects; do not generate a parallel STAC object model.
+
+### Documentation
+
+Avoid series of shotgun sentences concatenated.
+
+Use bullet points where and when needed.
+
+#### CWL 
+
+When preparing markdown files, use backticks around CWL keywords, e.g. `File`, 

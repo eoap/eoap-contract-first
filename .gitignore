@@ -13,3 +13,6 @@ site/
 /otsu.tif
 /catalog/
 slides/node_modules/
+
+.notebook-runs/
+.ipynb_checkpoints/
