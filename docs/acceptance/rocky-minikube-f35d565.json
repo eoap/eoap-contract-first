@@ -1,0 +1,34 @@
+{
+  "source_commit": "f35d56584c585498e808d71ae5b31f2482e4382a",
+  "cluster": "eoap-mastering-app-package-docker",
+  "namespace": "eoap-contract-first",
+  "processing_runtime_user": 2000,
+  "published_candidate_acceptance_passed": false,
+  "unit_tests_passed": 40,
+  "processing_image": "eoap-contract-waterbodies:rocky-f35d565",
+  "real_processing_job": "contract-real-assets-f35d565",
+  "real_processing_namespace": "zarr-cloud-native-format",
+  "real_steps_passed": [
+    "crop-green",
+    "crop-nir",
+    "norm-diff",
+    "otsu",
+    "validated-stac"
+  ],
+  "input_geometry": "original real Item GeoJSON",
+  "full_notebook_acceptance_passed": false,
+  "original_lesson_wip_preserved": true,
+  "scientific_verification": {
+    "job": "contract-real-verify-f35d565",
+    "full_ndwi_pixel_equality": true,
+    "full_otsu_pixel_equality": true,
+    "epsg": 32610,
+    "shape": [
+      7205,
+      5460
+    ],
+    "ndwi_nodata": "NaN",
+    "mask_nodata": null,
+    "zero_mask_valid": true
+  }
+}

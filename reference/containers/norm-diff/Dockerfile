@@ -1,46 +1,36 @@
-# Build from the repository root using the company wheel/runtime pattern.
-FROM docker.io/rockylinux/rockylinux:10.2-minimal AS builder
-
+FROM docker.io/rockylinux/rockylinux:10.1-minimal@sha256:cfa2812ec7151c2be393cfe46e50cf59426373d12f03f4ffbdd56becb8195a65 AS builder
 RUN microdnf -y update && \
-    microdnf -y install curl tar python3 python3-pip python3-setuptools gcc git && \
+    microdnf -y install curl tar git python3 python3-pip python3-setuptools gcc gcc-c++ make sqlite-devel zlib-devel glibc-devel libstdc++-devel && \
     microdnf clean all
-RUN curl --fail --location https://github.com/pypa/hatch/releases/download/hatch-v1.14.0/hatch-x86_64-unknown-linux-gnu.tar.gz \
-      -o /tmp/hatch.tar.gz && \
+RUN test "$(uname -m)" = x86_64 && \
+    curl -fsSL https://github.com/pypa/hatch/releases/download/hatch-v1.14.0/hatch-x86_64-unknown-linux-gnu.tar.gz -o /tmp/hatch.tar.gz && \
+    echo "33af9b6f72cf11db6bc96070901cb9d32adbe316534bbf41d345cdd0d84b3459  /tmp/hatch.tar.gz" | sha256sum -c - && \
     tar -xzf /tmp/hatch.tar.gz -C /tmp && \
     install -m 0755 /tmp/hatch /usr/local/bin/hatch && \
-    rm -f /tmp/hatch /tmp/hatch.tar.gz
+    rm -rf /tmp/hatch*
+WORKDIR /src
+COPY reference /src
+RUN rm -rf dist && hatch build -t wheel
 
-WORKDIR /src/tool
-COPY reference/pyproject.toml reference/README.md reference/LICENSE ./
-COPY reference/src/ ./src/
-RUN hatch build -t wheel && \
-    python3 -m pip wheel --wheel-dir /wheels dist/*.whl
-
-FROM docker.io/rockylinux/rockylinux:10.2-minimal AS runtime
-
-ARG VERSION=1.0.0
-LABEL org.opencontainers.image.version=$VERSION \
-      org.opencontainers.image.source="https://github.com/eoap/waterbodies-learning" \
-      org.opencontainers.image.licenses="Apache-2.0" \
-      org.opencontainers.image.title="waterbodies-norm-diff"
+FROM docker.io/rockylinux/rockylinux:10.1-minimal@sha256:cfa2812ec7151c2be393cfe46e50cf59426373d12f03f4ffbdd56becb8195a65 AS runtime
 RUN microdnf -y update && \
-    microdnf -y install python3 python3-pip shadow-utils && \
+    microdnf -y install python3 python3-pip git jq libstdc++ sqlite-libs zlib libgomp expat && \
     microdnf clean all
 ENV HOME=/home/neo
 RUN /usr/sbin/groupadd -g 2000 neo && \
-    /usr/sbin/useradd -u 2000 -g 2000 -m -d /home/neo -s /sbin/nologin neo && \
-    mkdir -p /app && \
-    chown -R 2000:2000 /app /home/neo
+    /usr/sbin/useradd -u 2000 -g 2000 -m -d ${HOME} -s /sbin/nologin neo && \
+    mkdir -p /app /work && chown -R 2000:2000 /app /work ${HOME}
 USER neo
 WORKDIR /app
 ENV VIRTUAL_ENV=/app/venv
-ENV PATH="/app/venv/bin:${PATH}"
-RUN python3 -m venv /app/venv && \
-    python -m pip install --no-cache-dir --upgrade pip
-COPY --from=builder --chown=2000:2000 /wheels/ /app/dist/
-RUN python -m pip install --no-cache-dir --no-index --no-deps /app/dist/*.whl && \
-    python -m pip check && \
-    waterbodies --help && \
-    python -m pip uninstall --yes pip && \
-    rm -rf /app/dist
+ENV PATH="${VIRTUAL_ENV}/bin:${PATH}:/usr/bin"
+RUN python3 -c 'import sys; assert sys.version_info[:2] == (3, 12)' && python3 -m venv /app/venv
+COPY --chown=2000:2000 reference/requirements/runtime.txt /app/requirements.txt
+COPY --chown=2000:2000 vendor /app/vendor
+RUN pip install --no-cache-dir --require-hashes -r /app/requirements.txt
+COPY --from=builder --chown=2000:2000 /src/dist/*.whl /app/dist/
+RUN pip install --no-cache-dir --no-deps /app/dist/*.whl && \
+    pip check && python -m pip uninstall --yes pip && waterbodies --help && \
+    rm -rf /app/requirements.txt /app/dist
+ENTRYPOINT []
 CMD ["waterbodies", "--help"]
