@@ -1,0 +1,16 @@
+{
+  "source_commit": "30e98d54cd295f6cdc9b4bc20b80359d8f7c2448",
+  "branch": "feature/hatch-rocky-current-wip",
+  "original_worktree_wip_preserved": true,
+  "cluster": "eoap-mastering-app-package-docker",
+  "namespace": "eoap-contract-first",
+  "unit_tests_passed": 56,
+  "required_quality_checks_passed": true,
+  "practice_notebooks_passed": 14,
+  "host_practice_notebooks_passed": 14,
+  "notebook_results": "/workspace/eoap-contract-first-rocky-30e98d5/.notebook-runs/executed",
+  "notebook_mode": "local educational fixtures; container, registry, Kubernetes and deployment switches disabled by course check script",
+  "uv_locked_setup_verified": true,
+  "real_eo_processing_evidence": "rocky-minikube-f35d565.json; reference processing source unchanged",
+  "published_candidate_acceptance_passed": false
+}
