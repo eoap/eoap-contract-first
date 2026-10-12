@@ -1,5 +1,5 @@
 version = 1
-revision = 5
+revision = 3
 requires-python = ">=3.12, <3.15"
 resolution-markers = [
     "python_full_version >= '3.14'",
@@ -241,6 +241,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/aa/c3/0cb80dfe0f3076e5da7e4c5ad8e57bac6ac357ff4a6406205501cade4965/bandit-1.9.4.tar.gz", hash = "sha256:b589e5de2afe70bd4d53fa0c1da6199f4085af666fde00e8a034f152a52cd628", size = 4242677, upload-time = "2026-02-25T06:44:15.503Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/05/a4/a26d5b25671d27e03afb5401a0be5899d94ff8fab6a698b1ac5be3ec29ef/bandit-1.9.4-py3-none-any.whl", hash = "sha256:f89ffa663767f5a0585ea075f01020207e966a9c0f2b9ef56a57c7963a3f6f8e", size = 134741, upload-time = "2026-02-25T06:44:13.694Z" },
+]
+
+[[package]]
+name = "bash-kernel"
+version = "0.10.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "filetype" },
+    { name = "ipykernel" },
+    { name = "pexpect" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/20/02/5bf4e039573da57dfcb1b5ccc132c473a7e1d69d31d57a9205d03ddc57e5/bash_kernel-0.10.0.tar.gz", hash = "sha256:2ed5a0a416c418d1d751e71505bd6c889e12157444b50c4287a685da775c28ca", size = 628935, upload-time = "2025-01-05T15:18:52.658Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/50/10/3753926476ac077d1f4548369c0ff2a5600e2c8fa5aef3cfcc5b10cf6155/bash_kernel-0.10.0-py2.py3-none-any.whl", hash = "sha256:da28513230f5307c7a49e87352366304dc52b66faa207d6caed1b2bdec03c1fa", size = 616994, upload-time = "2025-01-05T15:18:48.681Z" },
 ]
 
 [[package]]
@@ -964,6 +978,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/53/e4/34efcb869715cf299e47d1ac7b2624d2bcb6f2d3dffc2f0abe8417f65ab2/filelock-4.0.12.tar.gz", hash = "sha256:cf42711a7ac791818b299fab0332a088c65aeeefa36290de98db92c434303b0c", size = 253880, upload-time = "2026-10-05T13:17:43.677Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/da/a1/b047e1c486a2c66283633b7dbb73872ca16ca1ce6a426f70d4d037fc8e1c/filelock-4.0.12-py3-none-any.whl", hash = "sha256:5f17ee83ecee8a6f3e389c75822fb70a1c2f0506b99438a6dffa1d56793588c8", size = 111732, upload-time = "2026-10-05T13:17:42.361Z" },
+]
+
+[[package]]
+name = "filetype"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/bb/29/745f7d30d47fe0f251d3ad3dc2978a23141917661998763bebb6da007eb1/filetype-1.2.0.tar.gz", hash = "sha256:66b56cd6474bf41d8c54660347d37afcc3f7d1970648de365c102ef77548aadb", size = 998020, upload-time = "2022-11-02T17:34:04.141Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/18/79/1b8fa1bb3568781e84c9200f951c735f3f157429f44be0495da55894d620/filetype-1.2.0-py2.py3-none-any.whl", hash = "sha256:7ce71b6880181241cf7ac8697a2f1eb6a8bd9b429f7ad6d27b8db9ba5f1c2d25", size = 19970, upload-time = "2022-11-02T17:34:01.425Z" },
 ]
 
 [[package]]
@@ -3637,6 +3660,8 @@ dev = [
     { name = "types-pyyaml" },
 ]
 notebook = [
+    { name = "bash-kernel" },
+    { name = "ipykernel" },
     { name = "jupyterlab" },
     { name = "matplotlib" },
     { name = "nbclient" },
@@ -3665,6 +3690,7 @@ tooling = [
 [package.metadata]
 requires-dist = [
     { name = "bandit", marker = "extra == 'dev'", specifier = ">=1.9,<2" },
+    { name = "bash-kernel", marker = "extra == 'notebook'", specifier = ">=0.10,<1" },
     { name = "cwl-baseline-plugin", marker = "extra == 'tooling'", specifier = "==0.1.1" },
     { name = "cwl-loader", marker = "extra == 'tooling'", specifier = "==0.27.0" },
     { name = "cwl2click", marker = "extra == 'tooling'", specifier = "==0.10.1" },
@@ -3676,6 +3702,7 @@ requires-dist = [
     { name = "cwl2puml", marker = "extra == 'tooling'", specifier = "==0.49.1" },
     { name = "cwl2sbom", marker = "extra == 'tooling'", specifier = "==0.1.1" },
     { name = "cwltool", marker = "extra == 'tooling'", specifier = ">=3.1" },
+    { name = "ipykernel", marker = "extra == 'notebook'", specifier = ">=6,<8" },
     { name = "jupyterlab", marker = "extra == 'notebook'", specifier = ">=4,<5" },
     { name = "matplotlib", marker = "extra == 'notebook'", specifier = ">=3.9,<4" },
     { name = "mkdocs-material", marker = "extra == 'dev'", specifier = ">=9,<10" },
