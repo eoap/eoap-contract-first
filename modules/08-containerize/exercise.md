@@ -1,5 +1,7 @@
 # Exercise — Containerize
 
+Open the [Bash practice lab](../../practice-labs/08-containerize.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Build the images
 
 Start Docker and run from the repository root:

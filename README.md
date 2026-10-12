@@ -21,7 +21,9 @@ waterbodies.cwl → generated CLI → implementations
 Use **top-down contract design with bottom-up implementation and verification**.
 The scientific chain remains crop(green/nir) → normalized difference → Otsu → STAC.
 
-Install Python 3.12–3.14, Git, uv and Task. Then:
+Students run the [notebook practice labs](practice-labs/README.md) in the dev-platform workspace on Minikube or Kubernetes using `eoepca/pde-code-server:amd64`. Select the image's preinstalled **Bash** kernel to run commands beside their explanations. Workspace startup supplies the course packages; no student terminal or kernel installation is required.
+
+For a separate local installation, instructors install Python 3.12–3.14, Git, uv and Task, then run:
 
 ```console
 git clone https://github.com/eoap/waterbodies-learning.git

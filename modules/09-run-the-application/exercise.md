@@ -1,5 +1,7 @@
 # Exercise — Run the application
 
+Open the [Bash practice lab](../../practice-labs/09-run-the-application.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Verify and run
 
 From the repository root:
