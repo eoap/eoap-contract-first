@@ -9,6 +9,15 @@ tasks:
     desc: Install the reference and pinned tooling (requires uv and Git)
     cmds:
       - uv sync --locked --extra tooling --extra dev
+  notebooks:setup:
+    desc: Set up a local notebook installation (dev-platform already supplies Bash)
+    cmds:
+      - uv sync --locked --extra tooling --extra dev --extra notebook
+      - uv run --no-sync bash scripts/install_notebook_kernels.sh --user
+  notebooks:check:
+    desc: Execute all local practice labs through their real Bash kernel
+    cmds:
+      - uv run --extra tooling --extra dev --extra notebook bash scripts/check_notebooks.sh
   quality:
     cmds:
       - uv run ruff format --check reference/src scripts tests

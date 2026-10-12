@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.25"]
+requires = ["hatchling>=1.27,<2"]
 build-backend = "hatchling.build"
 
 
@@ -9,20 +9,11 @@ dynamic = ["version"]
 description = "CWL contract-first Water Bodies processing application"
 readme = "README.md"
 license = "Apache-2.0"
-requires-python = ">=3.12,<3.15"
+requires-python = ">=3.12,<3.13"
 
 keywords = ["EOAP", "CWL", "STAC", "NDWI"]
 
-classifiers = [
-  "Development Status :: 4 - Beta",
-  "Intended Audience :: Developers",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: 3.14",
-  "Programming Language :: Python :: Implementation :: CPython",
-  "Programming Language :: Python :: Implementation :: PyPy",
-]
+classifiers = ["Development Status :: 4 - Beta", "Intended Audience :: Developers", "Programming Language :: Python", "Programming Language :: Python :: 3.12", "Programming Language :: Python :: Implementation :: CPython", "Programming Language :: Python :: Implementation :: PyPy"]
 
 dependencies = [
   "click>=8.1,<9",
@@ -37,12 +28,73 @@ dependencies = [
 [tool.hatch.metadata]
 allow-direct-references = true
 
-[project.urls]
-Repository = "https://github.com/eoap/waterbodies-learning"
+[tool.hatch.envs.test]
+template = "dev"
 
-# ---------------------------------------------------------------------------
-# Versioning and packaging
-# ---------------------------------------------------------------------------
+[tool.hatch.envs.test.scripts]
+test = ["bootstrap", "pytest ../tests/tools/test_processing.py"]
+
+[tool.hatch.envs.default]
+template = "dev"
+skip-install = false
+pre-install-commands = ["uv --directory .. pip install --require-hashes -r requirements/development.txt"]
+post-install-commands = ["uv pip install --no-deps --no-build-isolation -e ."]
+
+[tool.hatch.envs.dev]
+skip-install = true
+installer = "uv"
+post-install-commands = ["uv --directory .. pip install --require-hashes -r requirements/development.txt", "uv pip install --no-deps --no-build-isolation -e ."]
+template = "dev"
+python = "3.12"
+
+[tool.hatch.envs.dev.scripts]
+format-check = "ruff format --check src"
+lint-check = "ruff check src"
+typecheck = "mypy"
+security = "bandit -r src -x src/waterbodies/waterbodies.py"
+check = ["bootstrap", "format-check", "lint-check", "typecheck", "security"]
+bootstrap = ["uv --directory .. pip install --require-hashes -r requirements/development.txt", "uv pip install --no-deps --no-build-isolation -e ."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["src/waterbodies/waterbodies.py"]
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "UP", "FA", "TC", "B", "RET", "PTH", "C4", "SIM", "C90", "PLE", "PLW", "PLR", "PERF", "RUF"]
+ignore = ["E501", "W191", "E111", "E114", "E117", "PLR0904"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 7
+
+[tool.ruff.lint.pylint]
+max-args = 6
+max-branches = 10
+max-returns = 6
+max-statements = 40
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+pretty = true
+show_error_codes = true
+show_error_context = true
+warn_unreachable = true
+ignore_missing_imports = false
+files = ["src/waterbodies"]
+exclude = ["src/waterbodies/waterbodies.py"]
+untyped_calls_exclude = ["rasterio", "skimage", "shapely"]
+
+[[tool.mypy.overrides]]
+module = ["rasterio.*", "skimage.*", "shapely.*", "cwl2click.*", "cwl2markdown.*", "transpiler_mate.runtime.*"]
+follow_untyped_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+[project.urls]
+Documentation = "https://eoap.github.io/eoap-contract-first/"
+Source = "https://github.com/eoap/eoap-contract-first"
+Issues = "https://github.com/eoap/eoap-contract-first/issues"
 
 [tool.hatch.version]
 path = "src/waterbodies/__about__.py"
@@ -57,7 +109,8 @@ include = [
   "/waterbodies.cwl",
   "/inputs.yaml",
   "/containers",
-  "/Dockerfile"
+  "/Dockerfile",
+  "/requirements"
 ]
 
 

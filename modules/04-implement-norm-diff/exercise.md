@@ -1,5 +1,7 @@
 # Exercise — Implement normalized difference
 
+Open the [Bash practice lab](../../practice-labs/04-implement-norm-diff.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Create matching crops
 
 Run from the repository root:

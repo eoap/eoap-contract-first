@@ -1,5 +1,7 @@
 # Exercise — Evolve and assure the contract
 
+Open the [Bash practice lab](../../practice-labs/11-assure-the-contract.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Compare the versions
 
 From the repository root, create the report output directory:

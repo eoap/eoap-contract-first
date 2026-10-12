@@ -1,14 +1,18 @@
 # Exercise — Understand Water Bodies
 
+Open the [Bash practice lab](../../practice-labs/00-waterbodies.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Open the notebook
 
-Open the [guided notebook](waterbodies.ipynb) to explore the spectral bands, predict NDWI, crop the scene and inspect the water mask and its STAC metadata.
+For an additional Python-based activity, open the [guided notebook](waterbodies.ipynb) in the editor to explore the spectral bands, predict NDWI, crop the scene and inspect the water mask and its STAC metadata.
 
-From the repository root, install the notebook environment and launch JupyterLab:
+In Coder or VS Code, select **Python (eoap-contract-first)** for that notebook and run cells with Shift+Enter. Workspace startup registers this supplementary Python kernel; ask the instructor to check provisioning if it is missing. The [setup notebook](../../practice-labs/setup.ipynb) is only needed for a separate local installation.
+
+Instructors launching JupyterLab locally can use:
 
 ```console
-uv sync --extra notebook
-uv run --extra notebook jupyter lab docs/modules/00-waterbodies/waterbodies.ipynb
+task notebooks:setup
+uv run --extra tooling --extra dev --extra notebook jupyter lab modules/00-waterbodies/waterbodies.ipynb
 ```
 
 ## 2. Run the guided activity

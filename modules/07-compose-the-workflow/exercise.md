@@ -1,5 +1,7 @@
 # Exercise — Compose the workflow
 
+Open the [Bash practice lab](../../practice-labs/07-compose-the-workflow.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Trace the graph
 
 Open `reference/waterbodies.cwl`.
