@@ -34,7 +34,7 @@ path = "reference/src/waterbodies/__about__.py"
 
 
 [tool.hatch.build.targets.sdist]
-include = ["/reference", "/scripts", "/tests", "/docs", "/modules", "/supply-chain", "/README.md", "/LICENSE", "/NOTICE", "/pyproject.toml", "/Taskfile.yaml", "/mkdocs.yml", "/uv.lock", "/data", "/src", "/requirements", "/vendor"]
+include = ["/reference", "/scripts", "/tests", "/docs", "/modules", "/supply-chain", "/README.md", "/LICENSE", "/NOTICE", "/pyproject.toml", "/Taskfile.yaml", "/mkdocs.yml", "/uv.lock", "/data", "/src", "/requirements", "/vendor", "/practice-labs"]
 
 # This course wheel contains the authoritative contract; the application wheel
 # owns the waterbodies Python namespace.
@@ -270,7 +270,7 @@ check = ["bootstrap", "ruff format --check {args:reference/src scripts tests}", 
 bootstrap = ["uv pip install --require-hashes -r requirements/development.txt", "uv pip install --no-deps --no-build-isolation -e reference -e ."]
 
 [project.optional-dependencies]
-notebook = ["jupyterlab>=4,<5", "matplotlib>=3.9,<4", "nbclient>=0.10,<1"]
+notebook = ["bash-kernel>=0.10,<1", "ipykernel>=6,<8", "jupyterlab>=4,<5", "matplotlib>=3.9,<4", "nbclient>=0.10,<1"]
 tooling = [
   "transpiler-mate-runtime==1.3.0",
   "cwl-loader==0.27.0",

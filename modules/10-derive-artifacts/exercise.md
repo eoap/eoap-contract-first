@@ -1,5 +1,7 @@
 # Exercise — Derive artifacts
 
+Open the [Bash practice lab](../../practice-labs/10-derive-artifacts.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Generate the projections
 
 From the repository root:

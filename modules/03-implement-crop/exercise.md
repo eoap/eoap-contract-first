@@ -1,5 +1,7 @@
 # Exercise — Implement crop
 
+Open the [Bash practice lab](../../practice-labs/03-implement-crop.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Prepare local data
 
 Run these commands from the repository root. Outputs are written there; rerunning processing commands replaces their output files.

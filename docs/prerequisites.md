@@ -4,6 +4,10 @@ This course combines Python development, CWL workflows, container packaging and 
 
 A **CLI** is a command-line interface: a program invoked from a terminal. **PATH** is the list of directories your shell searches for those programs. A **virtual environment** keeps a project's Python interpreter and packages separate from other projects. The commands below use `uv run` to select this project's environment without requiring you to activate it manually.
 
+## Run commands from notebooks
+
+Students use the [Bash practice labs](practice-labs/README.md) in the dev-platform workspace on Minikube or Kubernetes. The `eoepca/pde-code-server:amd64` image already provides the Bash kernel. Select **Bash** and run cells with Shift+Enter; workspace startup installs the course packages. Students do not need a terminal or kernel installation. The environment preparation commands below are for instructors or separate local installations; the [optional setup notebook](practice-labs/setup.ipynb) covers that local case. Docker, Calrissian, registry scanning and ZOO sections still require their configured services.
+
 ## Choose the environment you need
 
 | Activity | Prerequisites |
@@ -17,7 +21,7 @@ A **CLI** is a command-line interface: a program invoked from a terminal. **PATH
 | Deploy and execute remotely | A configured ZOO API and execution backend, accessible staged data, available images and any required authentication. |
 | Build the instructor slides | Node.js, npm and the locally installed Marp CLI; a supported browser for PDF export. |
 
-Use a terminal with Bash and Unix-style utilities. Linux is the reference environment used by CI. On Windows, a Linux environment through [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) is a practical way to follow these commands; install and run the course tools inside that environment. The scripts are not written as PowerShell commands.
+The notebook Bash kernel runs Bash and Unix-style utilities inside the course workspace. Linux is the reference environment used by CI. On Windows, a Linux environment through [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) is a practical way to follow these commands; install and run the course tools inside that environment. The scripts are not written as PowerShell commands.
 
 On macOS, use Bash for the supplied scripts and check utility compatibility: the packaging script uses `realpath -m`, which may require GNU Coreutils. Container and SBOM examples target `linux/amd64`; on a different processor architecture, check your container engine's platform support rather than assuming a native build matches that target.
 

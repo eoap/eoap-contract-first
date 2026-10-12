@@ -1,5 +1,7 @@
 # 01 — Design the contract
 
+Open the [Bash practice lab](../../practice-labs/01-design-the-contract.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 Learning objective: Design typed tool inputs and outputs before writing processing code.
 
 Prerequisites: Module 00 and its verification.

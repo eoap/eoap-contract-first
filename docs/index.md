@@ -6,6 +6,8 @@
 
 Design the application contract, derive interfaces, implement the real raster algorithm, compose the workflow, then package and deploy a tested release.
 
+Open the [notebook practice labs](practice-labs/README.md) to run the course commands in Coder or JupyterLab beside their explanations.
+
 Start with the [learning path](learning-path.md) and [prerequisites](prerequisites.md).
 
 The CWL contract is the authoritative description of the EO application. Implementations, interfaces, workflow composition, documentation, metadata, supply-chain evidence, packaging and deployment artifacts are derived from or traceable back to it.
