@@ -27,16 +27,29 @@ $graph:
   requirements:
     ScatterFeatureRequirement: {}
   inputs:
-    item: Directory
-    aoi: string
-    epsg: string
+    item:
+      type: Directory
+      label: Item
+      doc: Item provided to this workflow.
+    aoi:
+      type: string
+      label: Aoi
+      doc: Aoi provided to this workflow.
+    epsg:
+      type: string
+      label: Epsg
+      doc: Epsg provided to this workflow.
     bands:
       type: string[]
       default: [green, nir]
+      label: Bands
+      doc: Bands provided to this workflow.
   outputs:
     stac-catalog:
       type: Directory
       outputSource: stac/stac-catalog
+      label: Stac catalog
+      doc: Stac catalog produced by this workflow.
   steps:
     crop:
       run: '#crop'
@@ -84,6 +97,12 @@ $graph:
     cropped:
       type: File
       outputBinding: {glob: 'crop_*.tif'}
+  requirements:
+    ResourceRequirement:
+      coresMin: 1
+      coresMax: 1
+      ramMin: 512
+      ramMax: 512
 - id: norm-diff
   class: CommandLineTool
   label: Normalized difference
@@ -103,6 +122,12 @@ $graph:
     ndwi:
       type: File
       outputBinding: {glob: norm_diff.tif}
+  requirements:
+    ResourceRequirement:
+      coresMin: 1
+      coresMax: 1
+      ramMin: 512
+      ramMax: 512
 - id: otsu
   class: CommandLineTool
   label: Otsu
@@ -118,6 +143,12 @@ $graph:
     binary-mask:
       type: File
       outputBinding: {glob: otsu.tif}
+  requirements:
+    ResourceRequirement:
+      coresMin: 1
+      coresMax: 1
+      ramMin: 512
+      ramMax: 512
 - id: stac
   class: CommandLineTool
   label: STAC
@@ -136,3 +167,9 @@ $graph:
     stac-catalog:
       type: Directory
       outputBinding: {glob: catalog}
+  requirements:
+    ResourceRequirement:
+      coresMin: 1
+      coresMax: 1
+      ramMin: 512
+      ramMax: 512

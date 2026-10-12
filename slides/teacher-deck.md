@@ -489,6 +489,8 @@ outputs:
   stac-catalog:
     type: Directory
     outputSource: stac/stac-catalog
+    label: Stac catalog
+    doc: Stac catalog produced by this workflow.
 ```
 
 ```text
