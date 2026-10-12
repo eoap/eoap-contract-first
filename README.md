@@ -48,3 +48,22 @@ See [architecture and verified upstream deviations](docs/architecture.md),
 and [contributing](docs/contributing.md).
 
 The [teacher-facing Marp deck](slides/README.md) provides presenter notes, live demos and reproducible HTML/PDF exports for the complete course.
+
+## Locked packaging and runtime preparation
+
+Both packages use Python 3.12 and explicit Hatchling wheel packages. Run
+`hatch run dev:check`, `hatch run dev:typecheck`, `hatch run test:test` and
+`hatch run dev:security` from the repository root. The reference package has
+its own Hatch profile and runs the shared scientific processing tests.
+The existing stricter Ruff and mypy rules remain enforced.
+
+Hash locks preserve the accepted dependency baseline. The required Terradue
+PySTAC Git reference remains in project metadata; the unmodified wheel from
+the already accepted commit is vendored with provenance so installation can
+require hashes. Five processing recipes build the same reference wheel on
+Rocky Linux 10.1 and install it into a UID/GID 2000 runtime without pip.
+
+This feature is prepared from committed source in an isolated worktree.
+Uncommitted lesson and notebook changes must be integrated and validated
+before release. Package tests and container builds alone do not satisfy
+real-EO notebook and published-candidate acceptance gates.
