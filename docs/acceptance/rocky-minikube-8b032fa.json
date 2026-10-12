@@ -1,0 +1,21 @@
+{
+  "source_commit": "8b032faca7b687674a7ce1afe3da0a6da564a7d9",
+  "cluster": "eoap-mastering-app-package-docker",
+  "namespace": "eoap-contract-first",
+  "processing_runtime_user": 2000,
+  "published_candidate_acceptance_passed": false,
+  "unit_tests_passed": 39,
+  "processing_image": "eoap-contract-waterbodies:rocky-8b032fa",
+  "real_processing_job": "contract-real-assets-8b032fa",
+  "real_processing_namespace": "zarr-cloud-native-format",
+  "real_steps_passed": [
+    "crop-green",
+    "crop-nir",
+    "norm-diff",
+    "otsu",
+    "validated-stac"
+  ],
+  "input_geometry": "original real Item GeoJSON",
+  "full_notebook_acceptance_passed": false,
+  "original_lesson_wip_preserved": true
+}
