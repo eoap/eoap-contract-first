@@ -89,7 +89,7 @@ jobs:
       - name: Associate evidence on a candidate and promote its immutable subject
         run: |
           bash supply-chain/oras/publish.sh "$VERSION"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: release-evidence
           path: |
