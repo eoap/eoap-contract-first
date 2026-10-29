@@ -134,3 +134,35 @@ def test_staged_source_remains_readable_after_relocation(
     assert (tmp_path / "crop_green.tif").is_file()
     item = read_item(staged)
     assert all(not Path(asset.href).is_absolute() for asset in item.get_assets().values())
+
+
+def test_valid_zero_ndwi_and_source_nodata_are_distinct(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Preserve equal nonzero reflectances and mask zero-valued source nodata."""
+    from rasterio.transform import from_origin
+
+    monkeypatch.chdir(tmp_path)
+    green = np.array([[1, 0], [2, 3]], dtype=np.uint16)
+    nir = np.array([[1, 4], [0, 1]], dtype=np.uint16)
+    paths = [Path("green.tif"), Path("nir.tif")]
+    for path, pixels in zip(paths, [green, nir], strict=True):
+        with rasterio.open(
+            path,
+            "w",
+            driver="GTiff",
+            width=2,
+            height=2,
+            count=1,
+            dtype="uint16",
+            nodata=0,
+            crs="EPSG:4326",
+            transform=from_origin(0, 2, 1, 1),
+        ) as raster:
+            raster.write(pixels, 1)
+    norm_diff_impl.execute(rasters=paths)
+    with rasterio.open("norm_diff.tif") as raster:
+        assert np.isnan(raster.nodata)
+        pixels = raster.read(1, masked=True)
+        np.testing.assert_array_equal(pixels.mask, [[False, True], [True, False]])
+        np.testing.assert_array_equal(pixels.compressed(), [0, 0.5])

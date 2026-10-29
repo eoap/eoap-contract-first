@@ -1,0 +1,7 @@
+click>=8.1,<9
+numpy>=2,<3
+rasterio>=1.4,<2
+scikit-image>=0.25,<0.27
+pyproj>=3.6,<4
+shapely>=2,<3
+pystac[validation] @ ./vendor/pystac-1.14.3-py3-none-any.whl

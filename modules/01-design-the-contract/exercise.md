@@ -1,5 +1,7 @@
 # Exercise — Design the contract
 
+Open the [Bash practice lab](../../practice-labs/01-design-the-contract.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Design a scratch tool
 
 - Copy the crop `CommandLineTool` from `reference/waterbodies.cwl` into `build/scratch-crop.cwl`.

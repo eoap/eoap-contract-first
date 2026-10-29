@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.25"]
+requires = ["hatchling>=1.27,<2"]
 build-backend = "hatchling.build"
 
 
@@ -9,20 +9,11 @@ dynamic = ["version"]
 description = "Contract-first EOAP Water Bodies learning and verification"
 readme = "README.md"
 license = "Apache-2.0"
-requires-python = ">=3.12,<3.15"
+requires-python = ">=3.12,<3.13"
 
 keywords = ["EOAP", "CWL", "STAC", "learning"]
 
-classifiers = [
-  "Development Status :: 4 - Beta",
-  "Intended Audience :: Developers",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: 3.14",
-  "Programming Language :: Python :: Implementation :: CPython",
-  "Programming Language :: Python :: Implementation :: PyPy",
-]
+classifiers = ["Development Status :: 4 - Beta", "Intended Audience :: Developers", "Programming Language :: Python", "Programming Language :: Python :: 3.12", "Programming Language :: Python :: Implementation :: CPython", "Programming Language :: Python :: Implementation :: PyPy"]
 
 dependencies = ["waterbodies==1.0.0"]
 
@@ -34,23 +25,21 @@ waterbodies = { path = "reference", editable = true }
 allow-direct-references = true
 
 [project.urls]
-Repository = "https://github.com/eoap/waterbodies-learning"
-
-# ---------------------------------------------------------------------------
-# Versioning and packaging
-# ---------------------------------------------------------------------------
+Documentation = "https://eoap.github.io/eoap-contract-first/"
+Source = "https://github.com/eoap/eoap-contract-first"
+Issues = "https://github.com/eoap/eoap-contract-first/issues"
 
 [tool.hatch.version]
 path = "reference/src/waterbodies/__about__.py"
 
 
 [tool.hatch.build.targets.sdist]
-include = ["/reference", "/scripts", "/tests", "/docs", "/modules", "/supply-chain", "/README.md", "/LICENSE", "/NOTICE", "/pyproject.toml", "/Taskfile.yaml", "/mkdocs.yml", "/uv.lock", "/data"]
+include = ["/reference", "/scripts", "/tests", "/docs", "/modules", "/supply-chain", "/README.md", "/LICENSE", "/NOTICE", "/pyproject.toml", "/Taskfile.yaml", "/mkdocs.yml", "/uv.lock", "/data", "/src", "/requirements", "/vendor", "/practice-labs"]
 
 # This course wheel contains the authoritative contract; the application wheel
 # owns the waterbodies Python namespace.
 [tool.hatch.build.targets.wheel]
-bypass-selection = true
+packages = ["src/waterbodies_learning"]
 
 [tool.hatch.build.targets.wheel.force-include]
 "reference/waterbodies.cwl" = "waterbodies_learning/waterbodies.cwl"
@@ -219,58 +208,23 @@ exclude_lines = [
 # ---------------------------------------------------------------------------
 
 [tool.hatch.envs.test]
-skip-install = false
-features = ["dev", "tooling"]
-# Hatch installs the project before environment dependencies and does not read uv sources.
-pre-install-commands = ['python -m pip install -e "{root}/reference"']
-
-dependencies = [
-  "waterbodies @ {root:uri}/reference",
-  "pytest>=8.4,<10",
-  "pytest-cov>=6.2,<8",
-]
-
+template = "dev"
 
 [tool.hatch.envs.test.scripts]
-test = "pytest {args:tests}"
+test = ["bootstrap", "pytest {args:tests}"]
 
-testv = "pytest --verbose {args:tests}"
-
-test-cov = "pytest --cov=waterbodies --cov-report=term-missing {args:tests}"
-
-test-show-setup = "pytest --setup-show {args:tests}"
-
-
-# Keep the default test command on the active interpreter; opt into the full matrix.
-[tool.hatch.envs.test-matrix]
-template = "test"
-
-[[tool.hatch.envs.test-matrix.matrix]]
-python = [
-  "3.12",
-  "3.13",
-  "3.14",
-]
-
-
-# ---------------------------------------------------------------------------
-# Hatch: development and quality environment
-# ---------------------------------------------------------------------------
+[tool.hatch.envs.default]
+template = "dev"
+skip-install = false
+pre-install-commands = ["uv pip install --require-hashes -r requirements/development.txt"]
+post-install-commands = ["uv pip install --no-deps --no-build-isolation -e reference -e ."]
 
 [tool.hatch.envs.dev]
-skip-install = false
-features = ["dev", "tooling"]
-# Hatch installs the project before environment dependencies and does not read uv sources.
-pre-install-commands = ['python -m pip install -e "{root}/reference"']
-
-dependencies = [
-  "waterbodies @ {root:uri}/reference",
-  "mypy>=2.3.0",
-  "ruff>=0.16.0",
-  "bandit>=1.9.4",
-  "pytest>=8.4,<10",
-]
-
+skip-install = true
+installer = "uv"
+post-install-commands = ["uv pip install --require-hashes -r requirements/development.txt", "uv pip install --no-deps --no-build-isolation -e reference -e ."]
+template = "dev"
+python = "3.12"
 
 [tool.hatch.envs.dev.scripts]
 
@@ -306,26 +260,17 @@ security = "bandit -r {args:reference/src scripts} -x reference/src/waterbodies/
 
 
 # Run the complete static quality gate.
-quality = [
-  "ruff format --check {args:reference/src scripts tests}",
-  "ruff check {args:reference/src scripts tests}",
-  "mypy {args:}",
-  "bandit -r {args:reference/src scripts} -x reference/src/waterbodies/waterbodies.py",
-]
+quality = ["bootstrap", "ruff format --check {args:reference/src scripts tests}", "ruff check {args:reference/src scripts tests}", "mypy {args:}", "bandit -r {args:reference/src scripts} -x reference/src/waterbodies/waterbodies.py"]
 
 
 # Complete local/CI validation including tests.
-check = [
-  "ruff format --check {args:reference/src scripts tests}",
-  "ruff check {args:reference/src scripts tests}",
-  "mypy {args:}",
-  "bandit -r {args:reference/src scripts} -x reference/src/waterbodies/waterbodies.py",
-  "pytest {args:tests}",
-]
+check = ["bootstrap", "ruff format --check {args:reference/src scripts tests}", "ruff check {args:reference/src scripts tests}", "mypy {args:}", "bandit -r {args:reference/src scripts} -x reference/src/waterbodies/waterbodies.py", "pytest {args:tests}"]
 
 # Provide test extras for editable installations.
+bootstrap = ["uv pip install --require-hashes -r requirements/development.txt", "uv pip install --no-deps --no-build-isolation -e reference -e ."]
+
 [project.optional-dependencies]
-notebook = ["jupyterlab>=4,<5", "matplotlib>=3.9,<4", "nbclient>=0.10,<1"]
+notebook = ["bash-kernel>=0.10,<1", "ipykernel>=6,<8", "jupyterlab>=4,<5", "matplotlib>=3.9,<4", "nbclient>=0.10,<1"]
 tooling = [
   "transpiler-mate-runtime==1.3.0",
   "cwl-loader==0.27.0",

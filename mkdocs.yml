@@ -17,6 +17,7 @@ nav:
   - Home: index.md
   - Prerequisites: prerequisites.md
   - Learning path: learning-path.md
+  - Practice labs: practice-labs/README.md
   - Architecture: architecture.md
   - Modules:
       - "00 - Understand Water Bodies":

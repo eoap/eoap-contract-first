@@ -1,0 +1,1 @@
+PySTAC is built unmodified from Terradue t2_extensions commit 5941d0c361d409d35e0aeb36f6ae05b03008de71, the revision already recorded in uv.lock. The wheel permits hash-locked installations; project metadata retains the required Git reference. SHA256: 94d239298dd5d5e518cb024ef56991c2c0027b2c0262a6f5c5e938300ef5689c. See PYSTAC-LICENSE.

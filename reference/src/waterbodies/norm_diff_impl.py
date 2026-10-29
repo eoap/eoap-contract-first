@@ -28,11 +28,13 @@ def execute(*, rasters: Sequence[Path]) -> None:
     with rasterio.open(rasters[0]) as green, rasterio.open(rasters[1]) as nir:
         if (green.shape, green.transform, green.crs) != (nir.shape, nir.transform, nir.crs):
             raise ValueError("Raster dimensions, transform and CRS must match")
-        green_pixels = green.read(1).astype(np.float32)
-        nir_pixels = nir.read(1).astype(np.float32)
+        green_pixels = green.read(1, masked=True).astype(np.float32).filled(np.nan)
+        nir_pixels = nir.read(1, masked=True).astype(np.float32).filled(np.nan)
         metadata = green.meta.copy()
     with np.errstate(divide="ignore", invalid="ignore"):
         ndwi = (green_pixels - nir_pixels) / (green_pixels + nir_pixels)
-    metadata.update(driver="COG", dtype="float32", count=1, compress="LZW", blocksize=256)
+    metadata.update(
+        driver="COG", dtype="float32", nodata=np.nan, count=1, compress="LZW", blocksize=256
+    )
     with rasterio.open("norm_diff.tif", "w", **metadata) as output:
         output.write(ndwi, 1)

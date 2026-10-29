@@ -1,5 +1,7 @@
 # Exercise — Publish research software
 
+Open the [Bash practice lab](../../practice-labs/12-publish-research-software.ipynb) and run the commands beside their explanations. Select **Bash** in the notebook kernel picker; [notebook setup](../../practice-labs/README.md) covers Coder and JupyterLab. The command blocks below are also available as executable lab cells.
+
 ## 1. Inspect the source metadata
 
 Open `reference/waterbodies.cwl` and identify its `s:` software metadata. Note the release version and research-software identity.

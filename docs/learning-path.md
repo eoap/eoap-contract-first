@@ -1,5 +1,7 @@
 # Learning path
 
+Use the [Bash practice labs](practice-labs/README.md) to execute each module without a terminal. Each notebook combines concepts, commands, expected results and reflection prompts.
+
 Follow the modules in order; each exercise verifies a real repository artifact.
 
 - [00 — Understand Water Bodies](modules/00-waterbodies/README.md): Recognize the spectral and metadata processing graph.

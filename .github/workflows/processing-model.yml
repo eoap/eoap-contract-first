@@ -1,0 +1,43 @@
+name: Locked processing model
+on:
+  pull_request:
+  push:
+    branches: ["feature/**", main]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directory: [".", reference]
+    defaults:
+      run:
+        working-directory: ${{ matrix.directory }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@v6
+      - run: uv tool install hatch==1.18.1
+      - run: hatch run dev:check
+      - run: hatch run dev:typecheck
+      - run: hatch run test:test
+      - run: hatch run dev:security
+  runtime:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dockerfile:
+          - reference/Dockerfile
+          - reference/containers/crop/Dockerfile
+          - reference/containers/norm-diff/Dockerfile
+          - reference/containers/otsu/Dockerfile
+          - reference/containers/stac/Dockerfile
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t waterbodies:accepted -f "${{ matrix.dockerfile }}" .
+      - run: |
+          docker run --rm waterbodies:accepted waterbodies --help
+          docker run --rm waterbodies:accepted python -c 'import importlib.util, os; assert os.getuid() == os.getgid() == 2000; assert importlib.util.find_spec("pip") is None'
